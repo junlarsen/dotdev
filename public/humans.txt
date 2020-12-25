@@ -1,0 +1,3 @@
+Site: https://supergrecko.dev
+Twitter: @supergrecko
+Components: AWS S3, NodeJS, Next.js, Vercel, React
