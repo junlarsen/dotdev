@@ -38,7 +38,7 @@ export function Project({
   return (
     <div className="shadow-sm w-full p-4 md:-mx-4 border border-gray w-1/3">
       <div className="pb-4">
-        <Header size={3} color="text-secondary">{name}</Header>
+        <Header size="text-3xl" color="text-secondary">{name}</Header>
         <Text color="text-secondary">{children}</Text>
       </div>
 

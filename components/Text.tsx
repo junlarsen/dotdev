@@ -6,8 +6,8 @@ export type HeaderProps = {
   children: ReactNode
   id?: string
   color?: string
+  size?: string
   element?: keyof JSX.IntrinsicElements
-  size?: 1 | 2 | 3 | 4 | 5 | 6
 }
 
 export function Header({
@@ -15,9 +15,9 @@ export function Header({
   id,
   color = "text-tertiary",
   element: Component = "h2",
-  size = 6
+  size = "text-6xl"
 }: HeaderProps): JSX.Element {
-  const classes = clsx("font-noto-sans my-4 font-bold", color, `text-${size}xl`)
+  const classes = clsx("font-noto-sans my-4 font-bold", color, size)
 
   return (
     <Component id={id} className={classes}>{children}</Component>
@@ -55,7 +55,7 @@ export function Link({
 
   return (
     <NextLink href={href}>
-      <a className={classes}>{children}</a>
+      <a target="_blank" rel="noreferrer noopener" className={classes}>{children}</a>
     </NextLink>
   )
 }
