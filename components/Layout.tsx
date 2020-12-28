@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import { Header, Link, Text } from './Text'
+import { Header, Text } from './Text'
+import { OpenInNew } from './Svg'
 
 export type LayoutSectionProps = {
   children: ReactNode
@@ -25,27 +26,34 @@ export function LayoutSection({
 export type ProjectProps = {
   name: string
   children: ReactNode
-  href?: string
   repo: string
 }
 
 export function Project({
   name,
   children,
-  href,
   repo
 }: ProjectProps): JSX.Element {
   return (
-    <div className="shadow-sm w-full p-4 md:-mx-4 border border-gray w-1/3">
-      <div className="pb-4">
-        <Header size="text-3xl" color="text-secondary">{name}</Header>
-        <Text color="text-secondary">{children}</Text>
+    <a href={repo} target="_blank" rel="noreferrer noopener">
+      <div
+        className="shadow-sm cursor-pointer w-full p-4 md:-mx-4 border border-gray transition transform hover:scale-105">
+        <div className="pb-4">
+          <div className="flex w-full justify-between">
+            <Header size="text-3xl" color="text-secondary">{name}</Header>
+            <div className="py-3">
+              <OpenInNew />
+            </div>
+          </div>
+          <Text color="text-secondary">{children}</Text>
+        </div>
       </div>
-
-      <div className="space-x-6">
-        {href && <Link href={href}>Project Homepage</Link>}
-        <Link href={`https://github.com/${repo}`}>View on GitHub</Link>
-      </div>
-    </div>
+    </a>
   )
+}
+
+export type TooltipProps = {
+  children: ReactNode
+  text: string
+  tag: string
 }

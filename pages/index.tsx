@@ -10,7 +10,7 @@ export default function Index() {
     <main id="top">
       <LayoutSection
         backgroundColor="bg-secondary"
-        footer={<Wave />}
+        footer={(<Wave />)}
       >
         <Nav links={[
           { href: '#about', text: 'About' },
@@ -20,7 +20,7 @@ export default function Index() {
 
         <div className="pt-16 md:pt-64 pb-16">
           <Header element="h1">Hello there! 👋</Header>
-          <Text>My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working on open-source software, video games and cooking.</Text>
+          <Text>My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working on open-source software, playing video games and cooking.</Text>
 
           <div className="py-16 md:space-x-4 flex flex-col md:flex-row">
             <Button className="bg-primary text-secondary" href="#projects">View Projects</Button>
@@ -31,15 +31,7 @@ export default function Index() {
 
       <LayoutSection backgroundColor="bg-white">
         <Header color="text-secondary" id="about">About Me</Header>
-        <Text color="text-secondary">I'm a third-year high school student in Norway looking to pursue a Computer Science degree after I graduate high school. I started programming during my spare time 4 years ago and my passion for software and open-source has grown ever since.
-        </Text>
-
-        <div className="py-16 space-y-8 pb-16 md:pb-64">
-          <div className="pb-4">
-            <Text color="text-secondary">I work on a few open-source projects. Feel free to view them on my GitHub profile..</Text>
-          </div>
-          <Link href="https://github.com/supergrecko">Visit my GitHub</Link>
-        </div>
+        <Text color="text-secondary">I'm a third-year high school student in Norway looking to pursue a Computer Science degree after I graduate high school. I started programming during my spare time 4 years ago and my passion for software and open-source has grown ever since.</Text>
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-white">
@@ -54,16 +46,15 @@ export default function Index() {
 
         <div className="flex flex-col pb-16">
           <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">Node Module for using the League of Legends Client APIs with a focus on ES6 Promises.</Project>
-          <Project name="BitBuilder" href="https://docs.vexelabs.io/bitbuilder/index.html" repo="https://github.com/vexelabs/bitbuilder">A comprehensive wrapper around LLVM's C API for Kotlin & the JVM.</Project>
-          <Project name="JavaCPP" href="http://bytedeco.org" repo="https://github.com/bytedeco/javacpp-presets">The missing Java distribution of native C++ libraries. (Owned and maintained by Samuel Audet)</Project>
+          <Project name="BitBuilder" repo="https://github.com/vexelabs/bitbuilder">A comprehensive wrapper around LLVM's C API for Kotlin & the JVM.</Project>
+          <Project name="JavaCPP" repo="https://github.com/bytedeco/javacpp-presets">The missing Java distribution of native C++ libraries. (Owned and maintained by Samuel Audet)</Project>
         </div>
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-secondary">
         <div className="pt-32 pb-16">
           <Header id="contact" color="text-white">Contact Me</Header>
-          <Text>I'm still a high school student and while I do have plans for the future I am always open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Willing to provide resume (english or norwegian) upon request.
-          </Text>
+          <Text>I'm still a high school student and while I do have plans for the future I am always open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Willing to provide resume (english or norwegian) upon request.</Text>
         </div>
         <div className="py-16">
           <div className="py-8">
