@@ -49,7 +49,7 @@ export type LinkProps = {
 export function Link({
   children,
   href,
-  color = "text-primary"
+  color = "text-tertiary"
 }: LinkProps): JSX.Element {
   const classes = clsx("text-3xl", color)
 

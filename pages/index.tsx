@@ -44,7 +44,7 @@ export default function Index() {
 
       <LayoutSection backgroundColor="bg-white">
         <div className="pt-32">
-          <Header color="text-secondary" id="projects">Projects & Technologies</Header>
+          <Header color="text-secondary" id="projects">Projects & Tech</Header>
           <Text color="text-secondary">I've worked on a lot of different projects using various tech stacks. My favorite stacks include Scala/Kotlin on the JVM, TypeScript + React for the web and Kotlin on the backend. Deploying Docker containers and managing cloud infrastructure on AWS is also on the list.</Text>
 
           <div className="py-16 space-y-8 pb-32">
@@ -72,9 +72,9 @@ export default function Index() {
           </div>
 
           <ul className="list-outside">
-            <li><Link href="https://github.com/supergrecko">GitHub &mdash; @supergrecko</Link></li>
-            <li><Link href="https://twitter.com/supergrecko">Twitter &mdash; @supergrecko</Link></li>
-            <li><Link href="mailto:me@supergrecko.com">Email &mdash; me@supergrecko.com</Link></li>
+            <li><Link color="text-primary" href="https://github.com/supergrecko">GitHub &mdash; @supergrecko</Link></li>
+            <li><Link color="text-primary" href="https://twitter.com/supergrecko">Twitter &mdash; @supergrecko</Link></li>
+            <li><Link color="text-primary" href="mailto:me@supergrecko.com">Email &mdash; me@supergrecko.com</Link></li>
           </ul>
         </div>
       </LayoutSection>
