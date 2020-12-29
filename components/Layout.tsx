@@ -51,9 +51,3 @@ export function Project({
     </a>
   )
 }
-
-export type TooltipProps = {
-  children: ReactNode
-  text: string
-  tag: string
-}

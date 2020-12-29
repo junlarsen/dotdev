@@ -13,7 +13,6 @@ export default class AppDocument extends Document {
         <Head>
           <link rel="canonical" href="https://supergrecko.dev/" />
           <link rel="manifest" href="/site.webmanifest" />
-          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <link rel="author" href="/humans.txt" />
           <link rel="license" href="https://www.apache.org/licenses/LICENSE-2.0" />
 
@@ -34,7 +33,7 @@ export default class AppDocument extends Document {
           <meta property="og:url" content="https://supergrecko.dev/" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="supergrecko.dev | my tiny piece of the internet" />
-          <meta property="og:image" content="https://example.com/favicon.png" />
+          <meta property="og:image" content="https://supergrecko.dev/favicon.png" />
           <meta property="og:image:alt" content="a happy, beautiful kitten" />
           <meta property="og:description" content="hello there! this is supergrecko.dev, my tiny piece of an unimaginably large internet.." />
           <meta property="og:site_name" content="supergrecko.dev" />
@@ -46,7 +45,7 @@ export default class AppDocument extends Document {
           <meta name="twitter:url" content="https://supergrecko.dev" />
           <meta name="twitter:title" content="supergrecko.dev | my tiny piece of the internet" />
           <meta name="twitter:description" content="hello there! this is supergrecko.dev, my tiny piece of an unimaginably large internet.." />
-          <meta name="twitter:image" content="https://example.com/favicon.png" />
+          <meta name="twitter:image" content="https://supergrecko.dev/favicon.png" />
           <meta name="twitter:image:alt" content="a happy, beautiful kitten" />
 
           <meta name="twitter:dnt" content="on" />
@@ -55,7 +54,7 @@ export default class AppDocument extends Document {
           <link rel="publisher" href="https://supergrecko.dev" />
           <meta itemProp="name" content="supergrecko.dev | my tiny piece of the internet" />
           <meta itemProp="description" content="hello there! this is supergrecko.dev, my tiny piece of an unimaginably large internet.." />
-          <meta itemProp="image" content="https://example.com/favicon.png" />
+          <meta itemProp="image" content="https://supergrecko.dev/favicon.png" />
 
           <meta name="pinterest" content="nopin" />
           <meta name="format-detection" content="telephone=no" />
