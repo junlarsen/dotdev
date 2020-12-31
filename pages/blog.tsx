@@ -34,7 +34,7 @@ export default function Blog({ posts }: BlogProps) {
 
       <LayoutSection backgroundColor="bg-white">
         {posts.length > 0 ? (
-          <div className="space-y-32">
+          <div className="space-y-32 py-16">
             {posts.map(post => (
               <ArticleItem {...post} />
             ))}

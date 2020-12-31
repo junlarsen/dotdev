@@ -16,7 +16,9 @@ export function ArticleItem({
 }: ArticleItemProps): JSX.Element {
   return (
     <div>
-      <Text color="text-black">{author} &mdash; {new Date(date * 1000).toLocaleDateString()} &mdash; {readingTime}</Text>
+      <div className="hidden md:inline-block">
+        <Text color="text-black">{author} &mdash; {new Date(date * 1000).toLocaleDateString()} &mdash; {readingTime}</Text>
+      </div>
       <Link href={`/blog/${slug}`}>
         <a>
           <Header size="text-5xl" color="text-black">{title}</Header>
