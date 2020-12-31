@@ -12,6 +12,8 @@ export type PostSchema = {
   content: string
   slug: string
   readingTime: string
+  topics: string[]
+  brief: string
 }
 
 const ARTICLES_SOURCE = path.join(process.cwd(), "articles")
@@ -34,7 +36,9 @@ export async function getPost(slug: string): Promise<PostSchema> {
     title: frontMatter.data.title,
     content: markdown,
     date: frontMatter.data.date,
-    readingTime: stats.text
+    readingTime: stats.text,
+    topics: frontMatter.data.topics ?? [],
+    brief: frontMatter.data.brief ?? ""
   }
 }
 

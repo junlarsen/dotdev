@@ -15,7 +15,7 @@ export default function Nav({
   return (
     <div className="py-8 flex justify-between">
       <div className="hidden md:inline">
-        <NavLink href="#top">Home</NavLink>
+        <NavLink href="/#top">Home</NavLink>
       </div>
       <div className="flex space-x-4">
         {links.map(child => (

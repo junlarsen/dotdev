@@ -17,8 +17,6 @@ export default function Post({ post }: PostProps) {
     )
   }
 
-  console.log(post)
-
   return (
     <h1>
       Hello World.
