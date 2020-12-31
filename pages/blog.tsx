@@ -51,7 +51,7 @@ export default function Blog({ posts }: BlogProps) {
         ) : (
           <div className="py-16 md:py-64">
             <Header color="text-secondary" id="about">Not yet ...</Header>
-            <Text color="text-secondary">We've searched far and wide, but we failed to find any articles!</Text>
+            <Text color="text-secondary">Looks like there's nothing here, maybe I should get to writing these articles soon ...</Text>
           </div>
         )}
       </LayoutSection>

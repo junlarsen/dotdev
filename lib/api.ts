@@ -20,7 +20,12 @@ export type PostSchema = {
 const ARTICLES_SOURCE = path.join(process.cwd(), "articles")
 
 export async function getAllSlugs(): Promise<string[]> {
-  return await fs.promises.readdir(ARTICLES_SOURCE)
+  const stats = await fs.promises.stat(ARTICLES_SOURCE)
+
+  if (stats.isDirectory()) {
+    return await fs.promises.readdir(ARTICLES_SOURCE)
+  }
+  return []
 }
 
 export async function getPost(slug: string): Promise<PostSchema> {
