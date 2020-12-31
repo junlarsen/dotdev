@@ -7,6 +7,7 @@ import Nav from '../components/Nav'
 import { Header, Text } from '../components/Text'
 import Contact from '../components/Contact'
 import { ArticleItem } from '../components/Article'
+import SEO from '../components/SEO'
 
 export type BlogProps = {
   posts: Omit<PostSchema, 'content'>[],
@@ -15,7 +16,15 @@ export type BlogProps = {
 
 export default function Blog({ posts }: BlogProps) {
   return (
-    <main id="top">
+    <main>
+      <SEO
+        title="supergrecko.dev | blog"
+        description="This is my blog. I occasionally write about things which are important to me. You'll find these articles here."
+        image="https://supergrecko.dev/favicon.png"
+        imageDescription="A picture of a kitten"
+        canonical="https://supergrecko.dev/"
+      />
+
       <LayoutSection
         backgroundColor="bg-secondary"
         footer={(<Wave />)}

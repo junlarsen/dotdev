@@ -2,8 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
-import remark from 'remark'
-import html from 'remark-html'
+import Markdown from 'markdown-it'
 
 export type PostSchema = {
   author: string
@@ -14,6 +13,8 @@ export type PostSchema = {
   readingTime: string
   topics: string[]
   brief: string
+  image: string | null
+  imageDescription: string | null
 }
 
 const ARTICLES_SOURCE = path.join(process.cwd(), "articles")
@@ -38,7 +39,9 @@ export async function getPost(slug: string): Promise<PostSchema> {
     date: frontMatter.data.date,
     readingTime: stats.text,
     topics: frontMatter.data.topics ?? [],
-    brief: frontMatter.data.brief ?? ""
+    brief: frontMatter.data.brief ?? "",
+    image: frontMatter.data?.image ?? null,
+    imageDescription: frontMatter.data?.imageDescription ?? null
   }
 }
 
@@ -52,7 +55,7 @@ export async function getAllPosts(): Promise<PostSchema[]> {
 }
 
 export async function toHtml(markdown: string): Promise<string> {
-  const md = await remark().use(html).process(markdown)
+  const md = new Markdown().render(markdown)
 
   return md.toString()
 }
