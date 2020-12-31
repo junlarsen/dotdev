@@ -4,14 +4,20 @@ import Button from '../components/Button'
 import { Wave } from '../components/Svg'
 import { Project, LayoutSection } from '../components/Layout'
 import { Header, Link, Text } from '../components/Text'
+import SEO from '../components/SEO'
 
 export default function Index() {
   return (
     <main id="top">
-      <LayoutSection
-        backgroundColor="bg-secondary"
-        footer={(<Wave />)}
-      >
+      <SEO
+        title="supergrecko.dev | my tiny piece of the internet"
+        description="This is supergrecko.dev, a site I built for myself, containg my portfolio and a blog."
+        image="https://supergrecko.dev/favicon.png"
+        imageDescription="A picture of a kitten"
+        canonical="https://supergrecko.dev/"
+      />
+
+      <LayoutSection backgroundColor="bg-secondary" footer={(<Wave />)}>
         <Nav links={[
           { href: '#about', text: 'About' },
           { href: '#projects', text: 'Projects' },
