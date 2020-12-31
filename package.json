@@ -9,6 +9,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@fontsource/noto-sans": "^4.1.0",
     "clsx": "^1.1.1",
     "next": "10.0.4",
     "react": "17.0.1",
