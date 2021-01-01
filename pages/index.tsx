@@ -54,7 +54,7 @@ export default function Index() {
         <div className="flex flex-col pb-16">
           <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">Node Module for using the League of Legends Client APIs with a focus on ES6 Promises.</Project>
           <Project name="BitBuilder" repo="https://github.com/vexelabs/bitbuilder">A comprehensive wrapper around LLVM's C API for Kotlin & the JVM.</Project>
-          <Project name="JavaCPP" repo="https://github.com/bytedeco/javacpp-presets">The missing Java distribution of native C++ libraries. (Owned and maintained by Samuel Audet)</Project>
+          <Project name="JavaCPP" repo="https://github.com/bytedeco/javacpp-presets">The missing bridge between Java and native C++ (by Samuel Audet & friends)</Project>
         </div>
       </LayoutSection>
       <Contact />

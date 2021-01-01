@@ -32,12 +32,12 @@ export default function Blog({ posts }: BlogProps) {
         <Nav links={[
           { href: '/#about', text: 'About' },
           { href: '/blog', text: 'Blog' },
-          { href: '#contact', text: 'Contact' }
+          { href: '/#contact', text: 'Contact' }
         ]} />
 
         <div className="pt-16 md:pt-32 pb-16">
           <Header element="h1">How did we get here? 🤔</Header>
-          <Text>This is my blog. I occasionally write about things which are important to me. You'll find these articles here.</Text>
+          <Text>This is my blog. I occasionally write about things which are important to me.</Text>
         </div>
       </LayoutSection>
 
@@ -51,11 +51,10 @@ export default function Blog({ posts }: BlogProps) {
         ) : (
           <div className="py-16 md:py-64">
             <Header color="text-secondary" id="about">Not yet ...</Header>
-            <Text color="text-secondary">Looks like there's nothing here, maybe I should get to writing these articles soon ...</Text>
+            <Text color="text-secondary">This space is empty because I couldn't find any articles 😢</Text>
           </div>
         )}
       </LayoutSection>
-      <Contact />
     </main>
   )
 }

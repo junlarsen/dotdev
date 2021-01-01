@@ -33,7 +33,7 @@ export default function Post({ post }: { post: PostSchema }) {
         <Nav links={[
           { href: '#about', text: 'About' },
           { href: '/blog', text: 'Blog' },
-          { href: '#contact', text: 'Contact' }
+          { href: '/#contact', text: 'Contact' }
         ]} />
 
         <div className="py-16">
@@ -49,7 +49,6 @@ export default function Post({ post }: { post: PostSchema }) {
           <div className="blog-prose" dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
       </LayoutSection>
-      <Contact />
     </main>
   )
 }
