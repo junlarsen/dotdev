@@ -3,9 +3,8 @@ import Nav from '../components/Nav'
 import Button from '../components/Button'
 import { Wave } from '../components/Svg'
 import { Project, LayoutSection } from '../components/Layout'
-import { Header, Text } from '../components/Text'
+import { Header, Link, Text } from '../components/Text'
 import SEO from '../components/SEO'
-import Contact from '../components/Contact'
 
 export default function Index() {
   return (
@@ -27,7 +26,7 @@ export default function Index() {
 
         <div className="pt-16 md:pt-64 pb-16">
           <Header element="h1">Hello there! 👋</Header>
-          <Text>My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working on open-source software, playing video games and cooking.</Text>
+          <Text size="text-3xl">My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working on open-source software, playing video games and cooking.</Text>
 
           <div className="py-16 md:space-x-4 flex flex-col md:flex-row">
             <Button className="bg-primary text-secondary" href="#projects">View Projects</Button>
@@ -57,7 +56,25 @@ export default function Index() {
           <Project name="JavaCPP" repo="https://github.com/bytedeco/javacpp-presets">The missing bridge between Java and native C++ (by Samuel Audet & friends)</Project>
         </div>
       </LayoutSection>
-      <Contact />
+
+      <LayoutSection backgroundColor="bg-secondary">
+        <div className="pt-32 pb-16">
+          <Header id="contact" color="text-white">Contact Me</Header>
+          <Text>I'm still a high school student and while I do have plans for the future I am always open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Able to provide resume (english or norwegian) upon request.</Text>
+        </div>
+        <div className="py-16">
+          <div className="py-8">
+            <Header id="socials" color="text-white">Find me online</Header>
+            <Text>Need to contact me for any or no reason? Reach me through one of these links. I'll try to get back to you as soon as possible!</Text>
+          </div>
+
+          <ul className="list-outside">
+            <li><Link color="text-primary" href="https://github.com/supergrecko">GitHub &mdash; @supergrecko</Link></li>
+            <li><Link color="text-primary" href="https://twitter.com/supergrecko">Twitter &mdash; @supergrecko</Link></li>
+            <li><Link color="text-primary" href="mailto:me@supergrecko.com">Email &mdash; me@supergrecko.com</Link></li>
+          </ul>
+        </div>
+      </LayoutSection>
     </main>
   )
 }

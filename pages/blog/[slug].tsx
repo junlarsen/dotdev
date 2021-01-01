@@ -1,15 +1,12 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 import { getAllPosts, getPost, PostSchema } from '../../lib/api'
 import { Params } from 'next/dist/next-server/server/router'
 import SEO from '../../components/SEO'
-import { Wave } from '../../components/Svg'
 import Nav from '../../components/Nav'
 import { Header, Text } from '../../components/Text'
-import Button from '../../components/Button'
 import { LayoutSection } from '../../components/Layout'
-import Contact from '../../components/Contact'
 
 export default function Post({ post }: { post: PostSchema }) {
   const router = useRouter()
@@ -45,7 +42,7 @@ export default function Post({ post }: { post: PostSchema }) {
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-white">
-        <div className="py-16 md:py-32">
+        <div className="py-16">
           <div className="blog-prose" dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
       </LayoutSection>

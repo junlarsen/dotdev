@@ -27,13 +27,15 @@ export function Header({
 export type TextProps = {
   children: ReactNode
   color?: string
+  size?: string
 }
 
 export function Text({
   children,
-  color = "text-white"
+  color = "text-white",
+  size = "text-2xl"
 }: TextProps): JSX.Element {
-  const classes = clsx("font-noto-sans text-3xl", color)
+  const classes = clsx("font-noto-sans", size, color)
 
   return (
     <p className={classes}>{children}</p>

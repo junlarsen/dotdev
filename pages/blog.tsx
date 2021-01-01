@@ -5,7 +5,6 @@ import { LayoutSection } from '../components/Layout'
 import { Wave } from '../components/Svg'
 import Nav from '../components/Nav'
 import { Header, Text } from '../components/Text'
-import Contact from '../components/Contact'
 import { ArticleItem } from '../components/Article'
 import SEO from '../components/SEO'
 
@@ -37,7 +36,7 @@ export default function Blog({ posts }: BlogProps) {
 
         <div className="pt-16 md:pt-32 pb-16">
           <Header element="h1">How did we get here? 🤔</Header>
-          <Text>This is my blog. I occasionally write about things which are important to me.</Text>
+          <Text size="text-3xl">This is my blog. I occasionally write about things which are important to me.</Text>
         </div>
       </LayoutSection>
 
