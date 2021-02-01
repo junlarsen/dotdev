@@ -37,7 +37,7 @@ export default function Index() {
 
       <LayoutSection backgroundColor="bg-white">
         <Header color="text-secondary" id="about">About Me</Header>
-        <Text color="text-secondary">I'm a third-year high school student in Norway looking to pursue a Computer Science degree after I graduate high school. I started programming during my spare time 4 years ago and my passion for software and open-source has grown ever since.</Text>
+        <Text color="text-secondary">I'm a third-year high school student in Norway. I started programming during my spare time 4 years ago and my passion for software and open-source has grown ever since.</Text>
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-white">
@@ -52,7 +52,7 @@ export default function Index() {
 
         <div className="flex flex-col pb-16">
           <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">Node Module for using the League of Legends Client APIs with a focus on ES6 Promises.</Project>
-          <Project name="BitBuilder" repo="https://github.com/vexelabs/bitbuilder">A comprehensive wrapper around LLVM's C API for Kotlin & the JVM.</Project>
+          <Project name="LLVM4J" repo="https://github.com/llvm4j/llvm4j">High quality LLVM FFI bindings for the Java Platform</Project>
           <Project name="JavaCPP" repo="https://github.com/bytedeco/javacpp-presets">The missing bridge between Java and native C++ (by Samuel Audet & friends)</Project>
         </div>
       </LayoutSection>
@@ -60,7 +60,7 @@ export default function Index() {
       <LayoutSection backgroundColor="bg-secondary">
         <div className="pt-32 pb-16">
           <Header id="contact" color="text-white">Contact Me</Header>
-          <Text>I'm still a high school student and while I do have plans for the future I am always open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Able to provide resume (english or norwegian) upon request.</Text>
+          <Text>I'm open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Able to provide resume (english or norwegian) upon request.</Text>
         </div>
         <div className="py-16">
           <div className="py-8">
