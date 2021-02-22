@@ -29,7 +29,7 @@ export default function Index() {
         <div className="pt-16 md:pt-64 pb-16">
           <Header element="h1">Hello there! 👋</Header>
           <Text size="text-3xl">
-            My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working
+            My name is Mats Larsen and I'm a high school student based in Norway. I like to spend my spare time working
             on open-source software, playing video games and cooking.
           </Text>
 
@@ -60,31 +60,34 @@ export default function Index() {
       <LayoutSection backgroundColor="bg-white">
         <div className="pt-32">
           <Header color="text-primary" id="projects">
-            Projects & Tech
+            Projects, Tech & Open Source
           </Header>
           <Text color="text-background">
-            I've worked on a lot of different projects using various tech stacks. My favorite stacks include
-            Scala/Kotlin on the JVM, TypeScript + React for the web and Kotlin on the backend. Deploying Docker
-            containers and managing cloud infrastructure on AWS is also on the list.
+            I work on a lot of projects across different tech stacks, ranging from front-end work using
+            Next.js/TypeScript to backend services and the JVM for backend and other applications. Docker,
+            containerization, deployment and management of cloud infrastructure is also a field I'm researching and
+            experimenting, in hopes of building fully automatic CI/CD pipelines.
           </Text>
 
           <div className="py-16 space-y-8 pb-32">
             <Text color="text-background">
-              These are some of the projects I've invested a lot of time into. It'd be awesome if you took the time to
-              check some of them out!
+              Here are the projects I've poured the most time and work into. It would be greatly appreciated if you took
+              the time to check them out.
             </Text>
           </div>
         </div>
 
         <div className="flex flex-col pb-16">
           <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">
-            Node Module for using the League of Legends Client APIs with a focus on ES6 Promises.
+            An up-to-date modern NodeJS module for accessing and interacting with the League of Legends Client over HTTP
+            and websockets.
           </Project>
           <Project name="LLVM4J" repo="https://github.com/llvm4j/llvm4j">
-            High quality LLVM FFI bindings for the Java Platform
+            Extensive and idiomatic Kotlin & Java bindings to LLVMs C API through Java Native Interface.
           </Project>
           <Project name="JavaCPP" repo="https://github.com/bytedeco/">
-            The missing bridge between Java and native C++ (by Samuel Audet & friends)
+            A solution for generating Java JNI code from C/C++ header files, providing Java bindings to 50+ C/C++
+            libraries. (In collaboration with Samuel Audet & friends)
           </Project>
         </div>
       </LayoutSection>
@@ -93,16 +96,15 @@ export default function Index() {
         <div className="pt-32 pb-16">
           <Header id="contact">Contact Me</Header>
           <Text>
-            I'm open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Able to
-            provide resume (english or norwegian) upon request.
+            I'm open to new opportunities and adventures. Have an offer I'd be interested in? Feel free to shoot me
+            an email. I'm able to provide a resume (english or norwegian) upon request.
           </Text>
         </div>
         <div className="py-16">
           <div className="py-8">
             <Header id="socials">Find me online</Header>
             <Text>
-              Need to contact me for any or no reason? Reach me through one of these links. I'll try to get back to you
-              as soon as possible!
+              Looking to contact me? Reach me through one of these links and I'll try to get back to you as soon as possible!
             </Text>
           </div>
 
@@ -118,8 +120,8 @@ export default function Index() {
               </Link>
             </li>
             <li>
-              <Link color="text-primary" href="mailto:me@supergrecko.com">
-                Email &mdash; me@supergrecko.com
+              <Link color="text-primary" href="mailto:me@supergrecko.dev">
+                Email &mdash; me@supergrecko.dev
               </Link>
             </li>
           </ul>
