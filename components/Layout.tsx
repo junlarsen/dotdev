@@ -37,15 +37,15 @@ export function Project({
   return (
     <a href={repo} target="_blank" rel="noreferrer noopener">
       <div
-        className="shadow-sm cursor-pointer w-full p-4 md:-mx-4 border border-gray transition transform hover:scale-105">
+        className="shadow-sm cursor-pointer w-full p-4 md:-mx-4 border border-gray transition transform hover:border-secondary hover:scale-105">
         <div className="pb-4">
           <div className="flex w-full justify-between">
-            <Header size="text-3xl" color="text-secondary">{name}</Header>
+            <Header size="text-3xl" color="text-primary">{name}</Header>
             <div className="py-3">
               <OpenInNew />
             </div>
           </div>
-          <Text color="text-secondary">{children}</Text>
+          <Text color="text-background">{children}</Text>
         </div>
       </div>
     </a>

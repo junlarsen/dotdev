@@ -8,7 +8,7 @@ html {
 }
 
 .blog-prose {
-  @apply text-2xl font-noto-sans text-secondary;
+  @apply text-2xl font-noto-sans text-background;
 }
 .blog-prose p {
   @apply my-8;

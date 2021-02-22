@@ -13,7 +13,7 @@ export type HeaderProps = {
 export function Header({
   children,
   id,
-  color = "text-tertiary",
+  color = "text-secondary",
   element: Component = "h2",
   size = "text-6xl"
 }: HeaderProps): JSX.Element {
@@ -46,14 +46,16 @@ export type LinkProps = {
   children: ReactNode
   href: string
   color?: string
+  hover?: string
 }
 
 export function Link({
   children,
   href,
-  color = "text-tertiary"
+  color = "text-primary",
+  hover = "text-secondary"
 }: LinkProps): JSX.Element {
-  const classes = clsx("text-3xl", color)
+  const classes = clsx("text-3xl", `hover:${hover}`, color)
 
   return (
     <NextLink href={href}>

@@ -35,7 +35,7 @@ export function NavLink({
   href,
   children,
 }: NavLinkProps): JSX.Element {
-  const classes = clsx("font-noto-sans underline flex-initial text-white transition hover:text-primary text-3xl")
+  const classes = clsx("font-noto-sans underline flex-initial text-primary transition hover:text-secondary text-3xl")
 
   return (
     <a className={classes} href={href}>

@@ -26,7 +26,7 @@ export default function Post({ post }: { post: PostSchema }) {
         canonical={`https://supergrecko.dev/blog/${post.slug}`}
       />
 
-      <LayoutSection backgroundColor="bg-secondary">
+      <LayoutSection backgroundColor="bg-background">
         <Nav links={[
           { href: '#about', text: 'About' },
           { href: '/blog', text: 'Blog' },

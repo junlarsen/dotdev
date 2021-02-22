@@ -21,10 +21,10 @@ export function ArticleItem({
       </div>
       <Link href={`/blog/${slug}`}>
         <a>
-          <Header size="text-5xl" color="text-black">{title}</Header>
+          <Header size="text-5xl" color="text-primary">{title}</Header>
         </a>
       </Link>
-      <Text color="text-secondary">{brief}...</Text>
+      <Text color="text-background">{brief}...</Text>
       {topics.length > 0 ? (
         <div className="space-x-4 my-2">
           {topics.map(topic => (
@@ -32,6 +32,7 @@ export function ArticleItem({
           ))}
         </div>
       ) : <Fragment />}
+      <hr className="my-6 text-secondary" />
     </div>
   )
 }
@@ -44,7 +45,7 @@ export function Pill({
   children,
 }: PillProps): JSX.Element {
   return (
-    <span className="w-auto rounded-lg bg-primary p-1 font-noto-sans text-2xl text-secondary">
+    <span className="w-auto rounded-lg border-2 border-primary px-2 py-1 font-noto-sans text-2xl text-background">
       {children}
     </span>
   )
