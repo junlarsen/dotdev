@@ -36,7 +36,10 @@ export default class AppDocument extends Document {
           <meta name="pinterest" content="nopin" />
           <meta name="format-detection" content="telephone=no" />
 
-          <noscript>This page uses JavaScript to function properly. If you haven't already, please consider enabling it to view my webpage.</noscript>
+          <noscript>
+            This page uses JavaScript to function properly. If you haven't already, please consider enabling it to view
+            my webpage.
+          </noscript>
         </Head>
         <body>
           <Main />

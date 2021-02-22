@@ -17,61 +17,111 @@ export default function Index() {
         canonical="https://supergrecko.dev/"
       />
 
-      <LayoutSection backgroundColor="bg-background" footer={(<Wave />)}>
-        <Nav links={[
-          { href: '#about', text: 'About' },
-          { href: '/blog', text: 'Blog' },
-          { href: '#contact', text: 'Contact' }
-        ]} />
+      <LayoutSection backgroundColor="bg-background" footer={<Wave />}>
+        <Nav
+          links={[
+            { href: '#about', text: 'About' },
+            { href: '/blog', text: 'Blog' },
+            { href: '#contact', text: 'Contact' }
+          ]}
+        />
 
         <div className="pt-16 md:pt-64 pb-16">
           <Header element="h1">Hello there! 👋</Header>
-          <Text size="text-3xl">My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working on open-source software, playing video games and cooking.</Text>
+          <Text size="text-3xl">
+            My name is Mats Larsen, and I'm a high school student based in Norway. I like to spend my spare time working
+            on open-source software, playing video games and cooking.
+          </Text>
 
           <div className="py-16 md:space-x-4 flex flex-col md:flex-row">
-            <Button className="bg-primary border text-background transition hover:bg-secondary" href="#projects">View Projects</Button>
-            <Button className="border border-primary text-primary transition hover:border-secondary hover:text-secondary" href="#contact">Contact Me</Button>
+            <Button className="bg-primary border text-background transition hover:bg-secondary" href="#projects">
+              View Projects
+            </Button>
+            <Button
+              className="border border-primary text-primary transition hover:border-secondary hover:text-secondary"
+              href="#contact"
+            >
+              Contact Me
+            </Button>
           </div>
         </div>
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-white">
-        <Header color="text-primary" id="about">About Me</Header>
-        <Text color="text-background">I'm a third-year high school student in Norway. I started programming during my spare time 4 years ago and my passion for software and open-source has grown ever since.</Text>
+        <Header color="text-primary" id="about">
+          About Me
+        </Header>
+        <Text color="text-background">
+          I'm a third-year high school student in Norway. I started programming during my spare time 4 years ago and my
+          passion for software and open-source has grown ever since.
+        </Text>
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-white">
         <div className="pt-32">
-          <Header color="text-primary" id="projects">Projects & Tech</Header>
-          <Text color="text-background">I've worked on a lot of different projects using various tech stacks. My favorite stacks include Scala/Kotlin on the JVM, TypeScript + React for the web and Kotlin on the backend. Deploying Docker containers and managing cloud infrastructure on AWS is also on the list.</Text>
+          <Header color="text-primary" id="projects">
+            Projects & Tech
+          </Header>
+          <Text color="text-background">
+            I've worked on a lot of different projects using various tech stacks. My favorite stacks include
+            Scala/Kotlin on the JVM, TypeScript + React for the web and Kotlin on the backend. Deploying Docker
+            containers and managing cloud infrastructure on AWS is also on the list.
+          </Text>
 
           <div className="py-16 space-y-8 pb-32">
-            <Text color="text-background">These are some of the projects I've invested a lot of time into. It'd be awesome if you took the time to check some of them out!</Text>
+            <Text color="text-background">
+              These are some of the projects I've invested a lot of time into. It'd be awesome if you took the time to
+              check some of them out!
+            </Text>
           </div>
         </div>
 
         <div className="flex flex-col pb-16">
-          <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">Node Module for using the League of Legends Client APIs with a focus on ES6 Promises.</Project>
-          <Project name="LLVM4J" repo="https://github.com/llvm4j/llvm4j">High quality LLVM FFI bindings for the Java Platform</Project>
-          <Project name="JavaCPP" repo="https://github.com/bytedeco/">The missing bridge between Java and native C++ (by Samuel Audet & friends)</Project>
+          <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">
+            Node Module for using the League of Legends Client APIs with a focus on ES6 Promises.
+          </Project>
+          <Project name="LLVM4J" repo="https://github.com/llvm4j/llvm4j">
+            High quality LLVM FFI bindings for the Java Platform
+          </Project>
+          <Project name="JavaCPP" repo="https://github.com/bytedeco/">
+            The missing bridge between Java and native C++ (by Samuel Audet & friends)
+          </Project>
         </div>
       </LayoutSection>
 
       <LayoutSection backgroundColor="bg-background">
         <div className="pt-32 pb-16">
           <Header id="contact">Contact Me</Header>
-          <Text>I'm open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Able to provide resume (english or norwegian) upon request.</Text>
+          <Text>
+            I'm open to new opportunities. Have something you think I'd be interested in? Shoot me an email! Able to
+            provide resume (english or norwegian) upon request.
+          </Text>
         </div>
         <div className="py-16">
           <div className="py-8">
             <Header id="socials">Find me online</Header>
-            <Text>Need to contact me for any or no reason? Reach me through one of these links. I'll try to get back to you as soon as possible!</Text>
+            <Text>
+              Need to contact me for any or no reason? Reach me through one of these links. I'll try to get back to you
+              as soon as possible!
+            </Text>
           </div>
 
           <ul className="list-outside">
-            <li><Link color="text-primary" href="https://github.com/supergrecko">GitHub &mdash; @supergrecko</Link></li>
-            <li><Link color="text-primary" href="https://twitter.com/supergrecko">Twitter &mdash; @supergrecko</Link></li>
-            <li><Link color="text-primary" href="mailto:me@supergrecko.com">Email &mdash; me@supergrecko.com</Link></li>
+            <li>
+              <Link color="text-primary" href="https://github.com/supergrecko">
+                GitHub &mdash; @supergrecko
+              </Link>
+            </li>
+            <li>
+              <Link color="text-primary" href="https://twitter.com/supergrecko">
+                Twitter &mdash; @supergrecko
+              </Link>
+            </li>
+            <li>
+              <Link color="text-primary" href="mailto:me@supergrecko.com">
+                Email &mdash; me@supergrecko.com
+              </Link>
+            </li>
           </ul>
         </div>
       </LayoutSection>

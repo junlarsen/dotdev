@@ -17,7 +17,7 @@ export type PostSchema = {
   imageDescription: string | null
 }
 
-const ARTICLES_SOURCE = path.join(process.cwd(), "articles")
+const ARTICLES_SOURCE = path.join(process.cwd(), 'articles')
 
 export async function getAllSlugs(): Promise<string[]> {
   const stats = await fs.promises.stat(ARTICLES_SOURCE)
@@ -44,7 +44,7 @@ export async function getPost(slug: string): Promise<PostSchema> {
     date: frontMatter.data.date,
     readingTime: stats.text,
     topics: frontMatter.data.topics ?? [],
-    brief: frontMatter.data.brief ?? "",
+    brief: frontMatter.data.brief ?? '',
     image: frontMatter.data?.image ?? null,
     imageDescription: frontMatter.data?.imageDescription ?? null
   }
@@ -52,11 +52,9 @@ export async function getPost(slug: string): Promise<PostSchema> {
 
 export async function getAllPosts(): Promise<PostSchema[]> {
   const allSlugs = await getAllSlugs()
-  const allPosts = await Promise.all([
-    ...allSlugs.map(slug => getPost(slug))
-  ])
+  const allPosts = await Promise.all([...allSlugs.map((slug) => getPost(slug))])
 
-  return allPosts.sort((x, y) => x.date > y.date ? -1 : 1)
+  return allPosts.sort((x, y) => (x.date > y.date ? -1 : 1))
 }
 
 export async function toHtml(markdown: string): Promise<string> {

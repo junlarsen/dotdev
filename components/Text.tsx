@@ -13,14 +13,16 @@ export type HeaderProps = {
 export function Header({
   children,
   id,
-  color = "text-secondary",
-  element: Component = "h2",
-  size = "text-6xl"
+  color = 'text-secondary',
+  element: Component = 'h2',
+  size = 'text-6xl'
 }: HeaderProps): JSX.Element {
-  const classes = clsx("font-noto-sans my-4 font-bold", color, size)
+  const classes = clsx('font-noto-sans my-4 font-bold', color, size)
 
   return (
-    <Component id={id} className={classes}>{children}</Component>
+    <Component id={id} className={classes}>
+      {children}
+    </Component>
   )
 }
 
@@ -30,16 +32,10 @@ export type TextProps = {
   size?: string
 }
 
-export function Text({
-  children,
-  color = "text-white",
-  size = "text-2xl"
-}: TextProps): JSX.Element {
-  const classes = clsx("font-noto-sans", size, color)
+export function Text({ children, color = 'text-white', size = 'text-2xl' }: TextProps): JSX.Element {
+  const classes = clsx('font-noto-sans', size, color)
 
-  return (
-    <p className={classes}>{children}</p>
-  )
+  return <p className={classes}>{children}</p>
 }
 
 export type LinkProps = {
@@ -49,17 +45,14 @@ export type LinkProps = {
   hover?: string
 }
 
-export function Link({
-  children,
-  href,
-  color = "text-primary",
-  hover = "text-secondary"
-}: LinkProps): JSX.Element {
-  const classes = clsx("text-3xl", `hover:${hover}`, color)
+export function Link({ children, href, color = 'text-primary', hover = 'text-secondary' }: LinkProps): JSX.Element {
+  const classes = clsx('text-3xl', `hover:${hover}`, color)
 
   return (
     <NextLink href={href}>
-      <a target="_blank" rel="noreferrer noopener" className={classes}>{children}</a>
+      <a target="_blank" rel="noreferrer noopener" className={classes}>
+        {children}
+      </a>
     </NextLink>
   )
 }

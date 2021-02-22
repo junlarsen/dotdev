@@ -9,7 +9,7 @@ import { ArticleItem } from '../components/Article'
 import SEO from '../components/SEO'
 
 export type BlogProps = {
-  posts: Omit<PostSchema, 'content'>[],
+  posts: Omit<PostSchema, 'content'>[]
   allTopics: string[]
 }
 
@@ -24,12 +24,14 @@ export default function Blog({ posts }: BlogProps) {
         canonical="https://supergrecko.dev/"
       />
 
-      <LayoutSection backgroundColor="bg-background" footer={(<Wave />)}>
-        <Nav links={[
-          { href: '/#about', text: 'About' },
-          { href: '/blog', text: 'Blog' },
-          { href: '/#contact', text: 'Contact' }
-        ]} />
+      <LayoutSection backgroundColor="bg-background" footer={<Wave />}>
+        <Nav
+          links={[
+            { href: '/#about', text: 'About' },
+            { href: '/blog', text: 'Blog' },
+            { href: '/#contact', text: 'Contact' }
+          ]}
+        />
 
         <div className="pt-16 md:pt-32 pb-16">
           <Header element="h1">How did we get here? 🤔</Header>
@@ -40,13 +42,15 @@ export default function Blog({ posts }: BlogProps) {
       <LayoutSection backgroundColor="bg-white">
         {posts.length > 0 ? (
           <div className="space-y-32 py-16">
-            {posts.map(post => (
+            {posts.map((post) => (
               <ArticleItem {...post} />
             ))}
           </div>
         ) : (
           <div className="py-16 md:py-64">
-            <Header color="text-secondary" id="about">Not yet ...</Header>
+            <Header color="text-secondary" id="about">
+              Not yet ...
+            </Header>
             <Text color="text-secondary">This space is empty because I couldn't find any articles 😢</Text>
           </div>
         )}
@@ -60,10 +64,10 @@ export async function getStaticProps(): Promise<Params> {
 
   return {
     props: {
-      posts: posts.map(post => ({
+      posts: posts.map((post) => ({
         ...post,
         content: null
-      })),
+      }))
     }
   }
 }

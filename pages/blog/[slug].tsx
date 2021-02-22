@@ -11,9 +11,7 @@ import { LayoutSection } from '../../components/Layout'
 export default function Post({ post }: { post: PostSchema }) {
   const router = useRouter()
   if (!router.isFallback && !post.slug) {
-    return (
-      <ErrorPage statusCode={404} />
-    )
+    return <ErrorPage statusCode={404} />
   }
 
   return (
@@ -21,21 +19,25 @@ export default function Post({ post }: { post: PostSchema }) {
       <SEO
         title={`supergrecko.dev | ${post.title}`}
         description={`${post.brief}...`}
-        image={post?.image ?? "https://supergrecko.dev/favicon.png"}
-        imageDescription={post?.imageDescription ?? "A picture of a kitten"}
+        image={post?.image ?? 'https://supergrecko.dev/favicon.png'}
+        imageDescription={post?.imageDescription ?? 'A picture of a kitten'}
         canonical={`https://supergrecko.dev/blog/${post.slug}`}
       />
 
       <LayoutSection backgroundColor="bg-background">
-        <Nav links={[
-          { href: '#about', text: 'About' },
-          { href: '/blog', text: 'Blog' },
-          { href: '/#contact', text: 'Contact' }
-        ]} />
+        <Nav
+          links={[
+            { href: '#about', text: 'About' },
+            { href: '/blog', text: 'Blog' },
+            { href: '/#contact', text: 'Contact' }
+          ]}
+        />
 
         <div className="py-16">
           <Header>{post.title}</Header>
-          <Text>{post.author} &mdash; {new Date(post.date * 1000).toLocaleDateString()} &mdash; {post.readingTime} </Text>
+          <Text>
+            {post.author} &mdash; {new Date(post.date * 1000).toLocaleDateString()} &mdash; {post.readingTime}{' '}
+          </Text>
           <hr className="text-primary my-2" />
           <Text>{post.brief}</Text>
         </div>
@@ -64,7 +66,7 @@ export async function getStaticPaths() {
   const allPosts = await getAllPosts()
 
   return {
-    paths: allPosts.map(post => ({
+    paths: allPosts.map((post) => ({
       params: {
         slug: post.slug
       }

@@ -8,16 +8,10 @@ export type LayoutSectionProps = {
   backgroundColor: string
 }
 
-export function LayoutSection({
-  children,
-  footer,
-  backgroundColor
-}: LayoutSectionProps): JSX.Element {
+export function LayoutSection({ children, footer, backgroundColor }: LayoutSectionProps): JSX.Element {
   return (
     <section className={backgroundColor}>
-      <div className="max-w-screen-lg mx-auto p-3">
-        {children}
-      </div>
+      <div className="max-w-screen-lg mx-auto p-3">{children}</div>
       {footer}
     </section>
   )
@@ -29,18 +23,15 @@ export type ProjectProps = {
   repo: string
 }
 
-export function Project({
-  name,
-  children,
-  repo
-}: ProjectProps): JSX.Element {
+export function Project({ name, children, repo }: ProjectProps): JSX.Element {
   return (
     <a href={repo} target="_blank" rel="noreferrer noopener">
-      <div
-        className="shadow-sm cursor-pointer w-full p-4 md:-mx-4 border border-gray transition transform hover:border-secondary hover:scale-105">
+      <div className="shadow-sm cursor-pointer w-full p-4 md:-mx-4 border border-gray transition transform hover:border-secondary hover:scale-105">
         <div className="pb-4">
           <div className="flex w-full justify-between">
-            <Header size="text-3xl" color="text-primary">{name}</Header>
+            <Header size="text-3xl" color="text-primary">
+              {name}
+            </Header>
             <div className="py-3">
               <OpenInNew />
             </div>
