@@ -27,7 +27,7 @@ export default function Post({ post }: { post: PostSchema }) {
       <LayoutSection backgroundColor="bg-background">
         <Nav
           links={[
-            { href: '#about', text: 'About' },
+            { href: '/about', text: 'About' },
             { href: '/blog', text: 'Blog' },
             { href: '/#contact', text: 'Contact' }
           ]}

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { Header, Text } from './Text'
 import { OpenInNew } from './Svg'
+import clsx from 'clsx'
 
 export type LayoutSectionProps = {
   children: ReactNode
@@ -41,4 +42,17 @@ export function Project({ name, children, repo }: ProjectProps): JSX.Element {
       </div>
     </a>
   )
+}
+
+export type SpacerProps = {
+  size: 'sm' | 'md' | 'lg'
+}
+
+export function Spacer({ size }: SpacerProps) {
+  const classes = clsx({
+    'my-8': size === 'sm',
+    'my-16': size === 'md',
+    'my-32': size === 'lg'
+  })
+  return <div className={classes} />
 }

@@ -20,14 +20,14 @@ export default function Blog({ posts }: BlogProps) {
         title="supergrecko.dev | blog"
         description="This is my blog. I occasionally write about things which are important to me. You'll find these articles here."
         image="https://supergrecko.dev/favicon.png"
-        imageDescription="A picture of a kitten"
+        imageDescription="A picture of a cat, I like cats."
         canonical="https://supergrecko.dev/"
       />
 
       <LayoutSection backgroundColor="bg-background" footer={<Wave />}>
         <Nav
           links={[
-            { href: '/#about', text: 'About' },
+            { href: '/about', text: 'About' },
             { href: '/blog', text: 'Blog' },
             { href: '/#contact', text: 'Contact' }
           ]}
