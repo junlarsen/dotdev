@@ -20,7 +20,7 @@ export default function Post({ post }: { post: PostSchema }) {
         title={`supergrecko.dev | ${post.title}`}
         description={`${post.brief}...`}
         image={post?.image ?? 'https://supergrecko.dev/favicon.png'}
-        imageDescription={post?.imageDescription ?? 'A picture of a kitten'}
+        imageDescription={post?.imageDescription ?? 'A picture of a cat, I like cats.'}
         canonical={`https://supergrecko.dev/blog/${post.slug}`}
       />
 

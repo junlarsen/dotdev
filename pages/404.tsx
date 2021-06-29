@@ -1,7 +1,7 @@
 import SEO from '../components/SEO'
 import { Wave } from '../components/Svg'
 import Nav from '../components/Nav'
-import { Header, Link, Text } from '../components/Text'
+import { Header, Text } from '../components/Text'
 import { LayoutSection, Spacer } from '../components/Layout'
 import React from 'react'
 import NextLink from 'next/link'

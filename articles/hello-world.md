@@ -1,11 +1,11 @@
 ---
-author: supergrecko
+author: Mats Larsen
 date: 1609426988
 title: Hello World
-brief: This is a test article I made for fun and giggles
+brief: This is a test article to test out blog posts
 topics:
   - example
   - topics
 ---
 
-Well no, not really, this page is just here as a temporary placeholder ...
+There's nothing of interest here at the moment.

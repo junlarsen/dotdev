@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '../components/Nav'
 import Button from '../components/Button'
 import { Wave } from '../components/Svg'
-import { Project, LayoutSection } from '../components/Layout'
+import { Project, LayoutSection, Spacer } from '../components/Layout'
 import { Header, Link, Text } from '../components/Text'
 import SEO from '../components/SEO'
 
@@ -13,7 +13,7 @@ export default function Index() {
         title='supergrecko.dev | my tiny piece of the internet'
         description='This is dotdev, my personal website.'
         image='https://supergrecko.dev/favicon.png'
-        imageDescription='A picture of a kitten'
+        imageDescription="A picture of a cat, I like cats."
         canonical='https://supergrecko.dev/'
       />
 
@@ -34,6 +34,7 @@ export default function Index() {
             open-source software, playing video games, cooking and watching
             anime.
           </Text>
+          <Spacer size="sm" />
 
           <div className='py-16 md:space-x-4 flex flex-col md:flex-row'>
             <Button
