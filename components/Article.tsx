@@ -24,7 +24,7 @@ export function ArticleItem({ brief, title, author, date, readingTime, slug, top
       {topics.length > 0 ? (
         <div className="space-x-4 my-2">
           {topics.map((topic) => (
-            <Pill>{topic}</Pill>
+            <Pill key={topic} >{topic}</Pill>
           ))}
         </div>
       ) : (
