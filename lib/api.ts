@@ -8,7 +8,7 @@ export type PostSchema = {
   author: string
   date: number
   title: string
-  content: string
+  content: string | null
   slug: string
   readingTime: string
   topics: string[]

@@ -9,7 +9,7 @@ export type SEOProps = {
   canonical: string
 }
 
-export default function SEO({ title, description, image, imageDescription, canonical }: SEOProps): JSX.Element {
+export function SEO({ title, description, image, imageDescription, canonical }: SEOProps): JSX.Element {
   return (
     <Head>
       <title>{title}</title>

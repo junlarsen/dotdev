@@ -1,6 +1,6 @@
-import SEO from '../components/SEO'
-import Nav from '../components/Nav'
 import React from 'react'
+import { SEO } from '../components/SEO'
+import { Nav} from '../components/Nav'
 import { LayoutSection } from '../components/Layout'
 import { Header, Text } from '../components/Text'
 

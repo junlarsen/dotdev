@@ -1,10 +1,10 @@
-import SEO from '../components/SEO'
-import { Wave } from '../components/Svg'
-import Nav from '../components/Nav'
-import { Header, Text } from '../components/Text'
-import { LayoutSection, Spacer } from '../components/Layout'
 import React from 'react'
 import NextLink from 'next/link'
+import { SEO } from '../components/SEO'
+import { Wave } from '../components/Svg'
+import { Nav } from '../components/Nav'
+import { Header, Text } from '../components/Text'
+import { LayoutSection, Spacer } from '../components/Layout'
 
 export default function Error() {
   return (

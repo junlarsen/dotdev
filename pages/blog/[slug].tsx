@@ -1,12 +1,12 @@
 import React from 'react'
 import ErrorPage from 'next/error'
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next'
 import { useRouter } from 'next/router'
-import { getAllPosts, getPost, PostSchema } from '../../lib/api'
-import { Params } from 'next/dist/next-server/server/router'
-import SEO from '../../components/SEO'
-import Nav from '../../components/Nav'
+import { SEO } from '../../components/SEO'
+import { Nav } from '../../components/Nav'
 import { Header, Text } from '../../components/Text'
 import { LayoutSection } from '../../components/Layout'
+import { getAllPosts, getPost, PostSchema } from '../../lib/api'
 
 export default function Post({ post }: { post: PostSchema }) {
   const router = useRouter()
@@ -24,7 +24,7 @@ export default function Post({ post }: { post: PostSchema }) {
         canonical={`https://supergrecko.dev/blog/${post.slug}`}
       />
 
-      <LayoutSection backgroundColor="bg-background">
+      <LayoutSection backgroundColor='bg-background'>
         <Nav
           links={[
             { href: '/about', text: 'About' },
@@ -33,27 +33,30 @@ export default function Post({ post }: { post: PostSchema }) {
           ]}
         />
 
-        <div className="py-16">
+        <div className='py-16'>
           <Header>{post.title}</Header>
           <Text>
             {post.author} &mdash; {new Date(post.date * 1000).toLocaleDateString()} &mdash; {post.readingTime}{' '}
           </Text>
-          <hr className="text-primary my-2" />
+          <hr className='text-primary my-2' />
           <Text>{post.brief}</Text>
         </div>
       </LayoutSection>
 
-      <LayoutSection backgroundColor="bg-white">
-        <div className="py-16">
-          <div className="blog-prose" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <LayoutSection backgroundColor='bg-white'>
+        <div className='py-16'>
+          <div className='blog-prose'
+               dangerouslySetInnerHTML={{ __html: post.content ?? '' }} />
         </div>
       </LayoutSection>
     </main>
   )
 }
 
-export async function getStaticProps({ params }: Params): Promise<Params> {
-  const post = await getPost(params.slug)
+export async function getStaticProps(
+  { params }: GetStaticPropsContext<{ slug: string }>
+): Promise<GetStaticPropsResult<{ post: PostSchema }>> {
+  const post = await getPost(params!.slug)
 
   return {
     props: {

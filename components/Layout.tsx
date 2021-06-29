@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
+import clsx from 'clsx'
 import { Header, Text } from './Text'
 import { OpenInNew } from './Svg'
-import clsx from 'clsx'
 
 export type LayoutSectionProps = {
   children: ReactNode

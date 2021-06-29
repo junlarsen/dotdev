@@ -7,7 +7,7 @@ export type ButtonProps = {
   className?: string
 }
 
-export default function Button({ href, children, className }: ButtonProps): JSX.Element {
+export function Button({ href, children, className }: ButtonProps): JSX.Element {
   const classes = clsx(className, 'uppercase px-12 py-6')
 
   return (

@@ -1,12 +1,13 @@
 import React from 'react'
-import { getAllPosts, PostSchema } from '../lib/api'
-import { Params } from 'next/dist/next-server/server/router'
+import { GetStaticPropsResult } from 'next'
 import { LayoutSection } from '../components/Layout'
 import { Wave } from '../components/Svg'
-import Nav from '../components/Nav'
+import { Nav } from '../components/Nav'
 import { Header, Text } from '../components/Text'
 import { ArticleItem } from '../components/Article'
-import SEO from '../components/SEO'
+import { SEO } from '../components/SEO'
+import { getAllPosts, PostSchema } from '../lib/api'
+
 
 export type BlogProps = {
   posts: Omit<PostSchema, 'content'>[]
@@ -59,7 +60,7 @@ export default function Blog({ posts }: BlogProps) {
   )
 }
 
-export async function getStaticProps(): Promise<Params> {
+export async function getStaticProps(): Promise<GetStaticPropsResult<{ posts: PostSchema[] }>> {
   const posts = await getAllPosts()
 
   return {

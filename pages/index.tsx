@@ -1,10 +1,10 @@
 import React from 'react'
-import Nav from '../components/Nav'
-import Button from '../components/Button'
+import { Nav } from '../components/Nav'
+import { Button } from '../components/Button'
 import { Wave } from '../components/Svg'
 import { Project, LayoutSection, Spacer } from '../components/Layout'
 import { Header, Link, Text } from '../components/Text'
-import SEO from '../components/SEO'
+import { SEO } from '../components/SEO'
 
 export default function Index() {
   return (
