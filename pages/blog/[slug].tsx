@@ -1,30 +1,24 @@
 import React from 'react'
-import ErrorPage from 'next/error'
 import { GetStaticPropsContext, GetStaticPropsResult } from 'next'
-import { useRouter } from 'next/router'
+import { MDXRemote } from 'next-mdx-remote'
 import { SEO } from '../../components/SEO'
 import { Nav } from '../../components/Nav'
 import { Header, Text } from '../../components/Text'
 import { LayoutSection } from '../../components/Layout'
-import { getAllPosts, getPost, PostSchema } from '../../lib/api'
+import { getArticle, getArticles, Post } from '../../lib/mdx'
 
-export default function Post({ post }: { post: PostSchema }) {
-  const router = useRouter()
-  if (!router.isFallback && !post.slug) {
-    return <ErrorPage statusCode={404} />
-  }
-
+export default function Article({ source, metadata }: Post) {
   return (
     <main>
       <SEO
-        title={`supergrecko.dev | ${post.title}`}
-        description={`${post.brief}...`}
-        image={post?.image ?? 'https://supergrecko.dev/favicon.png'}
-        imageDescription={post?.imageDescription ?? 'A picture of a cat, I like cats.'}
-        canonical={`https://supergrecko.dev/blog/${post.slug}`}
+        title={`supergrecko.dev | ${metadata.title}`}
+        description={`${metadata.brief}...`}
+        image={metadata.imageUrl}
+        imageDescription={metadata.imageAlt ?? 'A picture of a cat, I like cats.'}
+        canonical={`https://supergrecko.dev/blog/${metadata.slug}`}
       />
 
-      <LayoutSection backgroundColor='bg-background'>
+      <LayoutSection backgroundColor="bg-background">
         <Nav
           links={[
             { href: '/about', text: 'About' },
@@ -33,47 +27,44 @@ export default function Post({ post }: { post: PostSchema }) {
           ]}
         />
 
-        <div className='py-16'>
-          <Header>{post.title}</Header>
+        <div className="py-16">
+          <Header>{metadata.title}</Header>
           <Text>
-            {post.author} &mdash; {new Date(post.date * 1000).toLocaleDateString()} &mdash; {post.readingTime}{' '}
+            {metadata.author} &mdash; {new Date(metadata.date).toLocaleDateString()} &mdash; {metadata.readingTime}{' '}
           </Text>
-          <hr className='text-primary my-2' />
-          <Text>{post.brief}</Text>
+          <hr className="text-primary my-2" />
+          <Text>{metadata.brief}</Text>
         </div>
       </LayoutSection>
 
-      <LayoutSection backgroundColor='bg-white'>
-        <div className='py-16'>
-          <div className='blog-prose'
-               dangerouslySetInnerHTML={{ __html: post.content ?? '' }} />
+      <LayoutSection backgroundColor="bg-white">
+        <div className="py-16">
+          <MDXRemote compiledSource={source.compiledSource} />
         </div>
       </LayoutSection>
     </main>
   )
 }
 
-export async function getStaticProps(
-  { params }: GetStaticPropsContext<{ slug: string }>
-): Promise<GetStaticPropsResult<{ post: PostSchema }>> {
-  const post = await getPost(params!.slug)
-
+export async function getStaticProps({
+  params
+}: GetStaticPropsContext<{ slug: string }>): Promise<GetStaticPropsResult<Post>> {
+  const article = await getArticle(params?.slug ?? 'does_not_exist')
   return {
     props: {
-      post
+      ...article
     }
   }
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPosts()
-
+  const allPosts = await getArticles()
   return {
     paths: allPosts.map((post) => ({
       params: {
-        slug: post.slug
+        slug: post.metadata.slug
       }
     })),
-    fallback: false
+    fallback: 'blocking'
   }
 }

@@ -6,15 +6,14 @@ import { Nav } from '../components/Nav'
 import { Header, Text } from '../components/Text'
 import { ArticleItem } from '../components/Article'
 import { SEO } from '../components/SEO'
-import { getAllPosts, PostSchema } from '../lib/api'
-
+import { getArticles, Post } from '../lib/mdx'
 
 export type BlogProps = {
-  posts: Omit<PostSchema, 'content'>[]
-  allTopics: string[]
+  posts: Post[]
+  topics: string[]
 }
 
-export default function Blog({ posts }: BlogProps) {
+export default function Blog({ posts, topics }: BlogProps) {
   return (
     <main>
       <SEO
@@ -60,14 +59,12 @@ export default function Blog({ posts }: BlogProps) {
   )
 }
 
-export async function getStaticProps(): Promise<GetStaticPropsResult<{ posts: PostSchema[] }>> {
-  const posts = await getAllPosts()
-
+export async function getStaticProps(): Promise<GetStaticPropsResult<{ posts: Post[] }>> {
+  const posts = await getArticles()
   return {
     props: {
       posts: posts.map((post) => ({
-        ...post,
-        content: null
+        ...post
       }))
     }
   }

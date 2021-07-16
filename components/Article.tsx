@@ -1,30 +1,28 @@
 import React, { ReactNode, Fragment } from 'react'
 import Link from 'next/link'
-import { PostSchema } from '../lib/api'
 import { Text, Header } from './Text'
+import { Post } from '../lib/mdx'
 
-export type ArticleItemProps = {} & Omit<PostSchema, 'content'>
-
-export function ArticleItem({ brief, title, author, date, readingTime, slug, topics }: ArticleItemProps): JSX.Element {
+export function ArticleItem({ metadata }: Post): JSX.Element {
   return (
     <div>
       <div className="hidden md:inline-block">
         <Text color="text-black">
-          {author} &mdash; {new Date(date * 1000).toLocaleDateString()} &mdash; {readingTime}
+          {metadata.author} &mdash; {new Date(metadata.date).toLocaleDateString()} &mdash; {metadata.readingTime}
         </Text>
       </div>
-      <Link href={`/blog/${slug}`}>
+      <Link href={`/blog/${metadata.slug}`}>
         <a>
           <Header size="text-5xl" color="text-primary">
-            {title}
+            {metadata.title}
           </Header>
         </a>
       </Link>
-      <Text color="text-background">{brief}...</Text>
-      {topics.length > 0 ? (
+      <Text color="text-background">{metadata.brief}...</Text>
+      {metadata.topics.length > 0 ? (
         <div className="space-x-4 my-2">
-          {topics.map((topic) => (
-            <Pill key={topic} >{topic}</Pill>
+          {metadata.topics.map((topic) => (
+            <Pill key={topic}>{topic}</Pill>
           ))}
         </div>
       ) : (

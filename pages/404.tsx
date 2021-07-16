@@ -30,9 +30,7 @@ export default function Error() {
           <Text size="text-3xl">It looks like you've found a dead link...</Text>
           <Spacer size="md" />
           <NextLink href="/">
-            <a className="text-3xl hover:text-secondary text-primary">
-              Go home
-            </a>
+            <a className="text-3xl hover:text-secondary text-primary">Go home</a>
           </NextLink>
         </div>
       </LayoutSection>
