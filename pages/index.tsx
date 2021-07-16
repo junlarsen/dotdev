@@ -20,7 +20,6 @@ export default function Index() {
       <LayoutSection backgroundColor="bg-background" footer={<Wave />}>
         <Nav
           links={[
-            { href: '/about', text: 'About' },
             { href: '/blog', text: 'Blog' },
             { href: '#contact', text: 'Contact' }
           ]}

@@ -21,7 +21,6 @@ export default function Article({ source, metadata }: Post) {
       <LayoutSection backgroundColor="bg-background">
         <Nav
           links={[
-            { href: '/about', text: 'About' },
             { href: '/blog', text: 'Blog' },
             { href: '/#contact', text: 'Contact' }
           ]}
