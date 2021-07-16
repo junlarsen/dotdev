@@ -18,7 +18,7 @@ export function ArticleItem({ metadata }: Post): JSX.Element {
           </Header>
         </a>
       </Link>
-      <Text color="text-background">{metadata.brief}...</Text>
+      <Text color="text-background">{metadata.brief}</Text>
       {metadata.topics.length > 0 ? (
         <div className="space-x-4 my-2">
           {metadata.topics.map((topic) => (
