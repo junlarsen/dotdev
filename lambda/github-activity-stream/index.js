@@ -1,1 +1,1 @@
-module.exports = require('./dist/src/app')
+module.exports = require('./dist/lambda/github-activity-stream/src/app')
