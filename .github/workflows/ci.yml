@@ -1,0 +1,10 @@
+name: GitHub Actions
+on: [pull_request, push, workflow_dispatch]
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn && yarn ci:fmt
+      - run: yarn && yarn ci:fmt
+        working-directory: lambda/github-activity-stream

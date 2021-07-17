@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "fmt": "prettier --config .prettierrc **/*.ts **/*.tsx pages/blog/[slug].tsx --write"
+    "fmt": "prettier --config .prettierrc **/*.ts **/*.tsx pages/blog/[slug].tsx --write",
+    "ci:fmt": "prettier --config .prettierrc **/*.ts **/*.tsx pages/blog/[slug].tsx --check"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^4.4.5",

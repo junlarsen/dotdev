@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "fmt": "prettier --config ../../.prettierrc src/* tests/* --write",
+    "ci:fmt": "prettier --config ../../.prettierrc src/* tests/* --check",
     "compile": "tsc --project ./tsconfig.json"
   },
   "dependencies": {
