@@ -21,7 +21,8 @@
     "downlevelIteration": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lambda"
   ],
   "include": [
     "next-env.d.ts",

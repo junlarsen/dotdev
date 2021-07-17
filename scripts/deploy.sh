@@ -9,16 +9,19 @@ if [[ ! -f "${PWD}/node_modules/.bin/tsc" ]]; then
 fi
 
 rm -r dist
-mkdir -p dist
+mkdir -p dist build
 
 function compile () {
-  pushd lambda/$1
-  echo "Entering directory lambda/$1"
-  yarn && yarn compile
-  zip ../../dist/lambda-$1.zip dist/**/* node_modules/**/* package.json yarn.lock index.js
-  echo "Deploying Lambda $2 to AWS"
-  aws lambda update-function-code --function-name $2 --zip-file fileb://../../dist/lambda-$1.zip
+  rm -r build
+  mkdir -p build && pushd build
+    cp -r ../lambda/$1/* .
+    yarn install --production=true
+    yarn compile
+    zip ../dist/lambda-$1.zip -r dist/* node_modules/* package.json yarn.lock index.js
+    aws lambda update-function-code --function-name $2 --zip-file fileb://../dist/lambda-$1.zip
   popd
 }
 
-compile last-fm-recently-played arn:aws:lambda:eu-west-3:351022664525:function:dotdev-lastfm
+compile github-activity-stream arn:aws:lambda:eu-west-3:351022664525:function:dotdev-github-activity-stream
+
+rm -r build
