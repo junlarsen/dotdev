@@ -3,16 +3,22 @@ module.exports = {
   darkMode: false,
   theme: {
     colors: {
-      primary: '#CA1551',
-      secondary: '#29b6f6',
-      background: '#010e28',
-      white: '#fafafe',
-      gray: '#e5e7eb'
+      background: '#1d2021',
+      white: '#ebdbb2',
+      grey: '#928374',
+      red: '#fb4934',
+      green: '#b8bb26',
+      yellow: '#fabd2f',
+      blue: '#83a598',
     },
     fontFamily: {
-      'noto-sans': ['Noto Sans', 'sans-serif'],
+      'jb': ['Jetbrains Mono', 'monospace'],
+      'nunito': ['Nunito', 'sans-serif']
     },
-    extend: {}
+    listStyleType: {
+      circle: 'circle',
+      decimal: 'decimal'
+    }
   },
   variants: {
     extend: {}

@@ -4,54 +4,5 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #fafafe;
-}
-
-.blog-prose {
-  @apply text-2xl font-noto-sans text-background;
-}
-.blog-prose p {
-  @apply my-8;
-}
-.blog-prose blockquote {
-  @apply my-8 pl-4 border-l-4;
-}
-.blog-prose h1 {
-  @apply text-6xl font-bold my-8;
-}
-.blog-prose h2 {
-  @apply text-6xl font-bold my-8;
-}
-.blog-prose h3 {
-  @apply text-5xl font-bold my-8;
-}
-.blog-prose h4 {
-  @apply text-4xl font-bold my-4;
-}
-.blog-prose h5 {
-  @apply text-2xl my-4;
-}
-.blog-prose h6 {
-  @apply text-2xl my-4;
-}
-.blog-prose ul {
-  @apply list-disc list-inside;
-}
-.blog-prose ol {
-  @apply list-decimal list-inside;
-}
-.blog-prose hr {
-  @apply my-3;
-}
-.blog-prose pre {
-  @apply bg-secondary rounded-md p-3 text-white;
-}
-.blog-prose a {
-  @apply text-primary font-bold hover:text-secondary hover:underline;
-}
-.blog-prose table {
-  @apply table-auto border-collapse	border border-gray;
-}
-.blog-prose th, td {
-  @apply border p-3;
+  @apply bg-background;
 }

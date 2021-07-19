@@ -1,117 +1,108 @@
-import React from 'react'
-import { Nav } from '../components/Nav'
-import { Button } from '../components/Button'
-import { Wave } from '../components/Svg'
-import { Project, LayoutSection, Spacer } from '../components/Layout'
-import { Header, Link, Text } from '../components/Text'
-import { SEO } from '../components/SEO'
+import React, { useEffect, useState } from 'react'
+import { Box, Container } from '../components/flex'
+import { Heading, Link, Text } from '../components/typography'
+import { Article, getArticles } from '../lib/mdx'
+import { GetStaticPropsResult } from 'next'
+import { GithubActivityStream } from '../types/github-activity-stream'
+import { HorizontalDivider, Section } from '../components/section'
+import { SiteMetadata } from '../components/metadata'
+import { SplitLayout } from '../layouts/split'
 
-export default function Index() {
+const GITHUB_ACTIVITY_ENDPOINT =
+  process.env.NODE_ENV === 'development'
+    ? 'https://cors-anywhere.herokuapp.com/https://api.supergrecko.dev/github/activity-stream'
+    : 'https://api.supergrecko.dev/github/activity-stream'
+
+export interface IndexProps {
+  articles: Article[]
+}
+
+export default function Index({ articles }: IndexProps) {
+  const [loading, setLoading] = useState(true)
+  const [activies, setActivities] = useState<GithubActivityStream.Response>()
+
+  useEffect(() => {
+    fetch(GITHUB_ACTIVITY_ENDPOINT)
+      .then((res) => res.json() as Promise<GithubActivityStream.Response>)
+      .then((res) => {
+        setLoading(false)
+        setActivities(res)
+      })
+  }, [articles])
+
   return (
-    <main id="top">
-      <SEO
-        title="supergrecko.dev | my tiny piece of the internet"
-        description="This is dotdev, my personal website."
-        image="https://supergrecko.dev/favicon.png"
-        imageDescription="A picture of a cat, I like cats."
-        canonical="https://supergrecko.dev/"
-      />
-
-      <LayoutSection backgroundColor="bg-background" footer={<Wave />}>
-        <Nav
-          links={[
-            { href: '/blog', text: 'Blog' },
-            { href: '#contact', text: 'Contact' }
-          ]}
-        />
-
-        <div className="pt-16 md:pt-64 pb-16">
-          <Header element="h1">Hello there! 👋</Header>
-          <Text size="text-3xl">
-            My name is Mats Larsen, I'm a student living in Norway and I like to spend my spare time working on
-            open-source software, playing video games, cooking and watching anime.
-          </Text>
-          <Spacer size="sm" />
-
-          <div className="py-16 md:space-x-4 flex flex-col md:flex-row">
-            <Button className="bg-primary border text-background transition hover:bg-secondary" href="#projects">
-              My Work
-            </Button>
-            <Button
-              className="border border-primary text-primary transition hover:border-secondary hover:text-secondary"
-              href="#contact"
-            >
-              Contact Me
-            </Button>
-          </div>
-        </div>
-      </LayoutSection>
-
-      <LayoutSection backgroundColor="bg-white">
-        <div className="pt-32">
-          <Header color="text-primary" id="projects">
-            Technology & Open Source
-          </Header>
-          <Text color="text-background">
-            I've worked on a lot of projects across various tech stacks, ranging from front-end development using React,
-            to backend services running on Node and the JVM. I'm currently active in multiple developer communities and
-            I actively contribute to a handful of open-source projects.
-          </Text>
-
-          <div className="py-16 space-y-8 pb-32">
-            <Text color="text-background">
-              These are the open-source projects I've poured the most time and work into.
-            </Text>
-          </div>
-        </div>
-
-        <div className="flex flex-col pb-16">
-          <Project name="JavaCPP" repo="https://github.com/bytedeco">
-            "The missing Java distribution of native C++ libraries", a project connecting the Java platform to the C/C++
-            world. Currently maintaining the LLVM and libgccjit bindings.
-          </Project>
-          <Project name="CompilerExplorer" repo="https://github.com/compiler-explorer/compiler-explorer">
-            An application and service for running compilers interactively in your browser to inspect the generated
-            assembly. Maintainer for the Kotlin and Java compilers on the website.
-          </Project>
-          <Project name="League Connect" repo="https://github.com/supergrecko/league-connect">
-            Author of a modern NodeJS module for accessing and interacting with the League of Legends Client over HTTP
-            and websockets.
-          </Project>
-        </div>
-      </LayoutSection>
-
-      <LayoutSection backgroundColor="bg-background">
-        <div className="pt-32 pb-16">
-          <Header id="contact">Contact Me</Header>
-          <Text>
-            I'm currently looking for work, preferably part-time but I'm willing to consider other positions. Feel free
-            to shoot me an email. I'll provide my resume upon request.
-          </Text>
-        </div>
-        <div className="py-16">
-          <div className="py-8">
-            <Header id="socials">Find me online</Header>
-            <Text>
-              Looking to contact me? Reach me through one of these links and I'll try to get back to you as soon as
-              possible!
-            </Text>
-          </div>
-
-          <ul className="list-outside">
-            <li>
-              <Link color="text-primary" href="https://github.com/supergrecko">
-                GitHub &mdash; @supergrecko
-              </Link>
-            </li>
-            <li>
-              <Link color="text-primary" href="mailto:me@supergrecko.dev">
-                Email &mdash; me@supergrecko.dev
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </LayoutSection>
-    </main>
+    <SplitLayout>
+      <Heading>Hi, I'm Mats Jun Larsen 👋</Heading>
+      <Section>
+        <Text>
+          I'm a student living in Norway and I like to spend my spare time working on open-source software, playing
+          video games, cooking and watching anime.
+        </Text>
+      </Section>
+      <Section>
+        <Text>
+          I study computer science at the Norwegian University of Science and Technology, and I've been programming for
+          the past four years.
+        </Text>
+      </Section>
+      <HorizontalDivider />
+      {articles.length > 0 && (
+        <>
+          <Container flexDirection="column" className="space-y-5">
+            {articles.slice(0, 3).map((article) => (
+              <a href={`/blog/${article.metadata.slug}`} key={article.metadata.title}>
+                <Text size="sm">
+                  {new Date(article.metadata.date).toLocaleDateString()} - {article.metadata.readingTime}
+                </Text>
+                <Heading>{article.metadata.title}</Heading>
+                <Text>{article.metadata.brief}</Text>
+              </a>
+            ))}
+          </Container>
+          <Section>
+            <Link href="/blog">View all blog posts</Link>
+          </Section>
+          <HorizontalDivider />
+        </>
+      )}
+      <Section>
+        <Heading>Recent open-source activity</Heading>
+        <Text>
+          Here are some of my latest contributions to open-source software. I participate in open-source because I think
+          it's extremely fun (and often challenging)
+        </Text>
+      </Section>
+      {loading && <Text color="white">Loading recent GitHub activity ...</Text>}
+      {activies && (
+        <Container flexDirection="column" className="space-y-5">
+          {activies.user.pullRequests.edges
+            .slice(-5)
+            .reverse()
+            .map((edge) => (
+              <Box key={edge.node.url}>
+                <Text size="sm">
+                  Opened PR:{' '}
+                  <Link href={edge.node.url}>
+                    {edge.node.repository.nameWithOwner} #{edge.node.number}
+                  </Link>
+                </Text>
+                <Text size="lg" color="green">
+                  {edge.node.title}
+                </Text>
+                <Text>{edge.node.body.split(' ').slice(0, 15).join(' ')}...</Text>
+              </Box>
+            ))}
+        </Container>
+      )}
+    </SplitLayout>
   )
+}
+
+export async function getStaticProps(): Promise<GetStaticPropsResult<IndexProps>> {
+  const articles = await getArticles()
+  return {
+    props: {
+      articles
+    }
+  }
 }

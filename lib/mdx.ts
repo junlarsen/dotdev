@@ -1,13 +1,13 @@
-import { promises as fs } from 'fs'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
+import { promises as fs } from 'fs'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 export const POSTS_ROOT_DIRECTORY = path.join(process.cwd(), 'articles')
 
-export interface PostMetadata {
+export interface ArticleMetadata {
   author: string
   date: number
   title: string
@@ -19,9 +19,9 @@ export interface PostMetadata {
   slug: string
 }
 
-export interface Post {
+export interface Article {
   source: MDXRemoteSerializeResult
-  metadata: PostMetadata
+  metadata: ArticleMetadata
 }
 
 export async function getSlugs(): Promise<string[]> {
@@ -32,7 +32,7 @@ export async function getSlugs(): Promise<string[]> {
   return []
 }
 
-export async function getArticle(slug: string): Promise<Post> {
+export async function getArticle(slug: string): Promise<Article> {
   const articleName = slug.replace(/\.mdx$/, '')
   const articlePath = path.join(POSTS_ROOT_DIRECTORY, `${articleName}.mdx`)
   const contents = await fs.readFile(articlePath, 'utf-8')
@@ -56,7 +56,7 @@ export async function getArticle(slug: string): Promise<Post> {
   }
 }
 
-export async function getArticles(): Promise<Post[]> {
+export async function getArticles(): Promise<Article[]> {
   const slugs = await getSlugs()
   const posts = await Promise.all([...slugs.map((slug) => getArticle(slug))])
   return posts.sort((x, y) => (x.metadata.date > y.metadata.date ? -1 : 1))

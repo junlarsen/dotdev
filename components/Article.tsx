@@ -1,9 +1,9 @@
 import React, { ReactNode, Fragment } from 'react'
 import Link from 'next/link'
 import { Text, Header } from './Text'
-import { Post } from '../lib/mdx'
+import { Article } from '../lib/mdx'
 
-export function ArticleItem({ metadata }: Post): JSX.Element {
+export function ArticleItem({ metadata }: Article): JSX.Element {
   return (
     <div>
       <div className="hidden md:inline-block">

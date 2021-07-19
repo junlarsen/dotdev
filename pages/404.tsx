@@ -4,7 +4,7 @@ import { SEO } from '../components/SEO'
 import { Wave } from '../components/Svg'
 import { Nav } from '../components/Nav'
 import { Header, Text } from '../components/Text'
-import { LayoutSection, Spacer } from '../components/Layout'
+import { Section, Spacer } from '../components/Layout'
 
 export default function Error() {
   return (
@@ -16,7 +16,7 @@ export default function Error() {
         imageDescription="A picture of a cat, I like cats."
         canonical="https://supergrecko.dev/404"
       />
-      <LayoutSection backgroundColor="bg-background" footer={<Wave />}>
+      <Section backgroundColor="bg-background" footer={<Wave />}>
         <Nav
           links={[
             { href: '/blog', text: 'Blog' },
@@ -32,7 +32,7 @@ export default function Error() {
             <a className="text-3xl hover:text-secondary text-primary">Go home</a>
           </NextLink>
         </div>
-      </LayoutSection>
+      </Section>
     </main>
   )
 }

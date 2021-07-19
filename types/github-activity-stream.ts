@@ -21,7 +21,7 @@ export namespace GithubActivityStream {
   export interface IssueMetadata {
     title: string
     url: string
-    id: string
+    number: number
     repository: Repository
     body: string
   }

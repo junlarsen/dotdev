@@ -19,7 +19,7 @@ export async function handler(event: APIGatewayProxyEvent, context: Context): Pr
                   title
                   body
                   url
-                  id
+                  number
                   repository {
                     url
                     nameWithOwner
@@ -37,7 +37,7 @@ export async function handler(event: APIGatewayProxyEvent, context: Context): Pr
                 url
                 body
                 title
-                id
+                number
                 repository {
                   url
                   nameWithOwner

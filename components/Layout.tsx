@@ -1,15 +1,16 @@
-import React, { ReactNode } from 'react'
+import React, { PropsWithChildren, ReactNode } from 'react'
 import clsx from 'clsx'
 import { Header, Text } from './Text'
 import { OpenInNew } from './Svg'
 
-export type LayoutSectionProps = {
-  children: ReactNode
+export function Section({
+  children,
+  footer,
+  backgroundColor
+}: PropsWithChildren<{
   footer?: ReactNode
   backgroundColor: string
-}
-
-export function LayoutSection({ children, footer, backgroundColor }: LayoutSectionProps): JSX.Element {
+}>): JSX.Element {
   return (
     <section className={backgroundColor}>
       <div className="max-w-screen-lg mx-auto p-3">{children}</div>
