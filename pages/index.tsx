@@ -32,7 +32,7 @@ export default function Index({ articles }: IndexProps) {
 
   return (
     <SplitLayout>
-      <Heading>Hi, I'm Mats Jun Larsen 👋</Heading>
+      <Heading>Hi, I'm Mats 👋</Heading>
       <Section>
         <Text>
           I'm a student living in Norway and I like to spend my spare time working on open-source software, playing
@@ -41,8 +41,16 @@ export default function Index({ articles }: IndexProps) {
       </Section>
       <Section>
         <Text>
-          I study computer science at the Norwegian University of Science and Technology, and I've been programming for
-          the past four years.
+          I'm currently studying computer science at the Norwegian University of Science and Technology, and I've been
+          programming as a hobby for the past four years.
+        </Text>
+      </Section>
+      <Section>
+        <Text>
+          You can usually find me hacking on{' '}
+          <Link href="https://github.com/compiler-explorer/compiler-explorer">Compiler Explorer</Link>, watching{' '}
+          <Link href="https://anilist.co/user/supergrecko">anime</Link> or hanging out. Please don't hesitate to contact
+          me, I'll get back to you as soon as possible
         </Text>
       </Section>
       <HorizontalDivider />

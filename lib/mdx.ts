@@ -27,7 +27,8 @@ export interface Article {
 export async function getSlugs(): Promise<string[]> {
   const status = await fs.stat(POSTS_ROOT_DIRECTORY)
   if (status.isDirectory()) {
-    return await fs.readdir(POSTS_ROOT_DIRECTORY)
+    const files = await fs.readdir(POSTS_ROOT_DIRECTORY)
+    return files.filter((file) => !file.startsWith('.'))
   }
   return []
 }
