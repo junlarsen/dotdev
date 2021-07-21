@@ -32,6 +32,14 @@ export default function Index({ articles }: IndexProps) {
 
   return (
     <SplitLayout>
+      <SiteMetadata
+        title="Home | supergrecko.dev"
+        description="Hi, I'm Mats 👋. I am student living in Norway and I like to spend my spare time working on open-source software, playing
+          video games, cooking and watching anime."
+        canonical="https://supergrecko.dev/"
+        imageUrl="/favicon.png"
+        imageAlt=""
+      />
       <Heading>Hi, I'm Mats 👋</Heading>
       <Section>
         <Text>
@@ -49,8 +57,8 @@ export default function Index({ articles }: IndexProps) {
         <Text>
           You can usually find me hacking on{' '}
           <Link href="https://github.com/compiler-explorer/compiler-explorer">Compiler Explorer</Link>, watching{' '}
-          <Link href="https://anilist.co/user/supergrecko">anime</Link> or hanging out. Please don't hesitate to contact
-          me, I'll get back to you as soon as possible
+          <Link href="https://anilist.co/user/supergrecko">anime</Link> or hanging out. Feel free to contact me, I'll
+          get back to you as soon as possible 🙂
         </Text>
       </Section>
       <HorizontalDivider />
@@ -76,8 +84,8 @@ export default function Index({ articles }: IndexProps) {
       <Section>
         <Heading>Recent open-source activity</Heading>
         <Text>
-          Here are some of my latest contributions to open-source software. I participate in open-source because I think
-          it's extremely fun (and often challenging)
+          Here are a few of my most recent open-source contributions. I enjoy contributing to open-source
+          because I think it's fun and because open-source software is very valuable to me.
         </Text>
       </Section>
       {loading && <Text color="white">Loading recent GitHub activity ...</Text>}
