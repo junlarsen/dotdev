@@ -75,7 +75,7 @@ export default function Index({ articles }: IndexProps) {
               </a>
             ))}
           </Container>
-          <Section>
+          <Section className="text-right">
             <Link href="/blog">View all blog posts</Link>
           </Section>
           <HorizontalDivider />
