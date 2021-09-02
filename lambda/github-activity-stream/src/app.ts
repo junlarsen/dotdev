@@ -1,12 +1,12 @@
 import { graphql } from '@octokit/graphql'
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda'
-import { GithubActivityStream } from '../../../types/github-activity-stream'
+import type { Response } from '../../../types/github-activity-stream'
 
 const GITHUB_API_KEY = process.env['ACTIVITY_STREAM_API_TOKEN'] ?? 'Invalid Token'
 
 /** Retrieve a feed of recent github activities */
 export async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
-  const res = await graphql<GithubActivityStream.Response>(
+  const res = await graphql<Response>(
     `
       {
         user(login: "supergrecko") {

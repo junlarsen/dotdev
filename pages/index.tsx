@@ -3,7 +3,7 @@ import { Box, Container } from '../components/flex'
 import { Heading, Link, Text } from '../components/typography'
 import { Article, getArticles } from '../lib/mdx'
 import { GetStaticPropsResult } from 'next'
-import { GithubActivityStream } from '../types/github-activity-stream'
+import { Response } from '../types/github-activity-stream'
 import { HorizontalDivider, Section } from '../components/section'
 import { SiteMetadata } from '../components/metadata'
 import { SplitLayout } from '../layouts/split'
@@ -19,11 +19,11 @@ export interface IndexProps {
 
 export default function Index({ articles }: IndexProps) {
   const [loading, setLoading] = useState(true)
-  const [activies, setActivities] = useState<GithubActivityStream.Response>()
+  const [activies, setActivities] = useState<Response>()
 
   useEffect(() => {
     fetch(GITHUB_ACTIVITY_ENDPOINT)
-      .then((res) => res.json() as Promise<GithubActivityStream.Response>)
+      .then((res) => res.json() as Promise<Response>)
       .then((res) => {
         setLoading(false)
         setActivities(res)
