@@ -2,7 +2,10 @@ import React, { PropsWithChildren } from 'react'
 import { Color } from './theme'
 import clsx from 'clsx'
 
-export function Section({ children, className }: PropsWithChildren<{
+export function Section({
+  children,
+  className
+}: PropsWithChildren<{
   className?: string
 }>) {
   const classes = clsx('my-3', className)

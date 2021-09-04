@@ -6,12 +6,12 @@ import { GetStaticPropsResult } from 'next'
 import { Response } from '../types/github-activity-stream'
 import { HorizontalDivider, Section } from '../components/section'
 import { SiteMetadata } from '../components/metadata'
-import { SplitLayout } from '../layouts/split'
+import { SplitLayout } from '../components/layouts/split'
 
 const GITHUB_ACTIVITY_ENDPOINT =
   process.env.NODE_ENV === 'development'
-    ? 'https://cors-anywhere.herokuapp.com/https://api.supergrecko.dev/github/activity-stream'
-    : 'https://api.supergrecko.dev/github/activity-stream'
+    ? 'https://cors-anywhere.herokuapp.com/https://api.supergrecko.dev/v1/github-activity'
+    : 'https://api.supergrecko.dev/v1/github-activity'
 
 export interface IndexProps {
   articles: Article[]
@@ -84,8 +84,8 @@ export default function Index({ articles }: IndexProps) {
       <Section>
         <Heading>Recent open-source activity</Heading>
         <Text>
-          Here are a few of my most recent open-source contributions. I enjoy contributing to open-source
-          because I think it's fun and because open-source software is very valuable to me.
+          Here are a few of my most recent open-source contributions. I enjoy contributing to open-source because I
+          think it's fun and because open-source software is very valuable to me.
         </Text>
       </Section>
       {loading && <Text color="white">Loading recent GitHub activity ...</Text>}

@@ -2,7 +2,7 @@ import React from 'react'
 import { GetStaticPropsResult } from 'next'
 import { getArticles, Article } from '../lib/mdx'
 import { Heading, Link, Text } from '../components/typography'
-import { SplitLayout } from '../layouts/split'
+import { SplitLayout } from '../components/layouts/split'
 import { HorizontalDivider, Section } from '../components/section'
 import { Box, Container } from '../components/flex'
 

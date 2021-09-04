@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 import { useRouter } from 'next/router'
-import { Box, Container } from '../components/flex'
-import { Heading, Link } from '../components/typography'
+import { Box, Container } from '../flex'
+import { Heading, Link } from '../typography'
 
 const FIND_ME_ONLINE_SECTIONS = [
   ['supergrecko#3434', 'https://discordapp.com/users/190902201659424769', '/icons/discord.svg'],

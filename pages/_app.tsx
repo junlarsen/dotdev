@@ -3,8 +3,8 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import '@fontsource/jetbrains-mono'
 import '@fontsource/nunito'
-import '../styles/globals.css'
-import '../styles/prismjs-gruvbox-dark.css'
+import '../components/styles/globals.css'
+import '../components/styles/prismjs-gruvbox-dark.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
