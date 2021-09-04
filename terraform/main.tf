@@ -21,7 +21,3 @@ provider "aws" {
     }
   }
 }
-
-module "route53" {
-  source = "./route53"
-}
