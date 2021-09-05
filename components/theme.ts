@@ -1,2 +1,2 @@
-export type Color = 'grey' | 'red' | 'green' | 'yellow' | 'blue' | 'white'
+export type Color = 'primary' | 'secondary' | 'white' | 'stroke'
 export type Size = 'sm' | 'md' | 'lg'

@@ -13,7 +13,7 @@ export function Section({
 }
 
 // border-yellow border-red border-green border-blue border-white border-grey
-export function HorizontalDivider({ color = 'yellow' }: { color?: Color }) {
+export function HorizontalDivider({ color = 'primary' }: { color?: Color }) {
   const classes = clsx(`border-${color}`)
   return (
     <Section>

@@ -88,7 +88,7 @@ export default function Index({ articles }: IndexProps) {
           think it's fun and because open-source software is very valuable to me.
         </Text>
       </Section>
-      {loading && <Text color="white">Loading recent GitHub activity ...</Text>}
+      {loading && <Text color="stroke">Loading recent GitHub activity ...</Text>}
       {activies && (
         <Container flexDirection="column" className="space-y-5">
           {activies.user.pullRequests.edges
@@ -102,7 +102,7 @@ export default function Index({ articles }: IndexProps) {
                     {edge.node.repository.nameWithOwner} #{edge.node.number}
                   </Link>
                 </Text>
-                <Text size="lg" color="green">
+                <Text size="lg" color="primary">
                   {edge.node.title}
                 </Text>
                 <Text>{edge.node.body.split(' ').slice(0, 15).join(' ')}...</Text>
