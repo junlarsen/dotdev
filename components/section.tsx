@@ -12,7 +12,7 @@ export function Section({
   return <div className={classes}>{children}</div>
 }
 
-// border-yellow border-red border-green border-blue border-white border-grey
+// border-white border-stroke border-primary border-secondary
 export function HorizontalDivider({ color = 'primary' }: { color?: Color }) {
   const classes = clsx(`border-${color}`)
   return (
