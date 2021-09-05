@@ -13,7 +13,7 @@ export function Text({
   color?: Color | 'background'
   size?: Size
 }>) {
-  const classes = clsx('font-nunito tracking-tight', `text-${color} text-${size}`)
+  const classes = clsx('font-nunito tracking-tight my-2', `text-${color} text-${size}`)
   return <p className={classes}>{children}</p>
 }
 
