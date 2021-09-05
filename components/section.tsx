@@ -14,7 +14,7 @@ export function Section({
 
 // border-white border-stroke border-primary border-secondary
 export function HorizontalDivider({ color = 'primary' }: { color?: Color }) {
-  const classes = clsx(`border-${color}`)
+  const classes = clsx(`border-${color} mb-8`)
   return (
     <Section>
       <hr className={classes} />

@@ -19,23 +19,26 @@ export function Text({
 
 export function Heading({
   children,
-  size = '2xl'
+  size = '3xl'
 }: PropsWithChildren<{
   size?: Size | 'xl' | '2xl' | '3xl' | '4xl'
 }>) {
-  const classes = clsx('font-nunito my-2 tracking-tight text-primary', `text-${size}`)
+  const classes = clsx('font-nunito my-2 tracking-tight font-bold text-primary', `text-${size}`)
   return <h2 className={classes}>{children}</h2>
 }
 
 export function Link({
   children,
-  href
+  href,
+  className
 }: PropsWithChildren<{
   href: string
+  className?: string
 }>) {
+  const classes = clsx('font-nunito text-lg tracking-tight text-secondary underline hover:font-bold', className)
   return (
     <NextLink href={href}>
-      <a className="font-nunito text-lg tracking-tight text-secondary underline hover:font-bold">{children}</a>
+      <a className={classes}>{children}</a>
     </NextLink>
   )
 }

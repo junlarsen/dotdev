@@ -14,7 +14,7 @@ export default function Blog({ articles }: BlogProps) {
   return (
     <SplitLayout>
       <Heading>How did we get here? 🤔</Heading>
-      <Text>This is my blog. I occasionally write about things which are important to me or interest me.</Text>
+      <Text>This is my blog. I occasionally write about things I like.</Text>
       <Section>
         <Link href="/">Go back home</Link>
       </Section>
@@ -25,11 +25,13 @@ export default function Blog({ articles }: BlogProps) {
             <Text size="sm">
               {new Date(article.metadata.date).toLocaleDateString()} - {article.metadata.readingTime}
             </Text>
-            <Link href={`/blog/${article.metadata.slug}`}>{article.metadata.title}</Link>
-            <Text>{article.metadata.brief}</Text>
+            <Link href={`/blog/${article.metadata.slug}`} className="font-bold text-2xl">
+              {article.metadata.title}
+            </Link>
+            <Text size="lg">{article.metadata.brief}</Text>
             <Container flexDirection="row" className="space-x-2">
               {article.metadata.topics.map((topic) => (
-                <Box key={topic} className="rounded bg-green p-1">
+                <Box key={topic} className="rounded bg-primary p-1">
                   <Text size="sm" color="background">
                     {topic}
                   </Text>

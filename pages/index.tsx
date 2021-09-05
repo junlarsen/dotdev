@@ -61,31 +61,29 @@ export default function Index({ articles }: IndexProps) {
           get back to you as soon as possible 🙂
         </Text>
       </Section>
-      <HorizontalDivider />
       {articles.length > 0 && (
         <>
+          <Section>
+            <Heading>Recent blog posts</Heading>
+            <Text>
+              I occasionally write about things I like, and when I do, I write it down <Link href="/blog">here</Link>.
+            </Text>
+          </Section>
           <Container flexDirection="column" className="space-y-5">
             {articles.slice(0, 3).map((article) => (
-              <a href={`/blog/${article.metadata.slug}`} key={article.metadata.title}>
-                <Text size="sm">
-                  {new Date(article.metadata.date).toLocaleDateString()} - {article.metadata.readingTime}
-                </Text>
-                <Heading>{article.metadata.title}</Heading>
+              <Box key={article.metadata.slug} className="pl-4 border-l-4 border-primary">
+                <Link href={`/blog/${article.metadata.slug}`}>{article.metadata.title}</Link>
                 <Text>{article.metadata.brief}</Text>
-              </a>
+              </Box>
             ))}
           </Container>
-          <Section className="text-right">
-            <Link href="/blog">View all blog posts</Link>
-          </Section>
-          <HorizontalDivider />
         </>
       )}
       <Section>
         <Heading>Recent open-source activity</Heading>
         <Text>
-          Here are a few of my most recent open-source contributions. I enjoy contributing to open-source because I
-          think it's fun and because open-source software is very valuable to me.
+          Here is a feed of my recent open-source contributions. I contribute to open-source software because I enjoy it
+          and because open-source is very valuable to me.
         </Text>
       </Section>
       {loading && <Text color="stroke">Loading recent GitHub activity ...</Text>}
@@ -95,7 +93,7 @@ export default function Index({ articles }: IndexProps) {
             .slice(-5)
             .reverse()
             .map((edge) => (
-              <Box key={edge.node.url}>
+              <Box key={edge.node.url} className="pl-4 border-l-4 border-primary">
                 <Text size="sm">
                   Opened PR:{' '}
                   <Link href={edge.node.url}>
