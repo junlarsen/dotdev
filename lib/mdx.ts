@@ -53,7 +53,7 @@ export async function getArticle(slug: string): Promise<Article> {
       readingTime: reading.text,
       imageUrl: data.imageUrl,
       imageAlt: data.imageAlt,
-      public: data.public !== 'false',
+      public: data.public !== false,
       slug: articleName
     }
   }
