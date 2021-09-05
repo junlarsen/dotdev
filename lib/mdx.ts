@@ -17,6 +17,7 @@ export interface ArticleMetadata {
   imageUrl: string
   imageAlt: string
   slug: string
+  public: boolean
 }
 
 export interface Article {
@@ -52,6 +53,7 @@ export async function getArticle(slug: string): Promise<Article> {
       readingTime: reading.text,
       imageUrl: data.imageUrl,
       imageAlt: data.imageAlt,
+      public: data.public !== 'false',
       slug: articleName
     }
   }
@@ -60,5 +62,6 @@ export async function getArticle(slug: string): Promise<Article> {
 export async function getArticles(): Promise<Article[]> {
   const slugs = await getSlugs()
   const posts = await Promise.all([...slugs.map((slug) => getArticle(slug))])
-  return posts.sort((x, y) => (x.metadata.date > y.metadata.date ? -1 : 1))
+  const available = posts.filter((post) => post.metadata.public)
+  return available.sort((x, y) => (x.metadata.date > y.metadata.date ? -1 : 1))
 }
