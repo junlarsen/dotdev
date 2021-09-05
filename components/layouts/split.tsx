@@ -7,7 +7,6 @@ const FIND_ME_ONLINE_SECTIONS = [
   ['supergrecko#3434', 'https://discordapp.com/users/190902201659424769', '/icons/discord.svg'],
   ['Email me!', 'mailto:me@supergrecko.com', '/icons/gmail.svg'],
   ['GitHub', 'https://github.com/supergrecko', '/icons/github.svg'],
-  ['AniList', 'https://anilist.co/user/supergrecko', '/icons/anilist.svg']
 ]
 
 export function SplitLayout({ children }: PropsWithChildren<{}>) {

@@ -3,13 +3,10 @@ module.exports = {
   darkMode: false,
   theme: {
     colors: {
-      background: '#1d2021',
-      white: '#ebdbb2',
-      grey: '#928374',
-      red: '#fb4934',
-      green: '#b8bb26',
-      yellow: '#fabd2f',
-      blue: '#83a598',
+      background: '#fffffe',
+      primary: '#ff8906',
+      secondary: '#e53170',
+      stroke: '#0f0e17'
     },
     fontFamily: {
       'jb': ['Jetbrains Mono', 'monospace'],
