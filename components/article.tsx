@@ -1,6 +1,6 @@
 import React, { ReactNode, Fragment } from 'react'
 import Link from 'next/link'
-import { Text, Header } from './Text'
+import { Text, Header } from './text'
 import { Article } from '../lib/mdx'
 
 export function ArticleItem({ metadata }: Article): JSX.Element {

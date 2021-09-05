@@ -1,10 +1,10 @@
 import React from 'react'
 import NextLink from 'next/link'
-import { SEO } from '../components/SEO'
-import { Wave } from '../components/Svg'
-import { Nav } from '../components/Nav'
-import { Header, Text } from '../components/Text'
-import { Section, Spacer } from '../components/Layout'
+import { SEO } from '../components/seo'
+import { Wave } from '../components/vectors'
+import { Navigation } from '../components/navigation'
+import { Header, Text } from '../components/text'
+import { Section, Spacer } from '../components/layout'
 
 export default function Error() {
   return (
@@ -17,7 +17,7 @@ export default function Error() {
         canonical="https://supergrecko.dev/404"
       />
       <Section backgroundColor="bg-background" footer={<Wave />}>
-        <Nav
+        <Navigation
           links={[
             { href: '/blog', text: 'Blog' },
             { href: '/#contact', text: 'Contact' }

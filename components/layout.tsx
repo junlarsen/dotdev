@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, ReactNode } from 'react'
 import clsx from 'clsx'
-import { Header, Text } from './Text'
-import { OpenInNew } from './Svg'
+import { Header, Text } from './text'
+import { OpenInNew } from './vectors'
 
 export function Section({
   children,

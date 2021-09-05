@@ -8,7 +8,7 @@ export type NavProps = {
   }[]
 }
 
-export function Nav({ links }: NavProps): JSX.Element {
+export function Navigation({ links }: NavProps): JSX.Element {
   return (
     <div className="py-8 flex justify-between">
       <div className="hidden md:inline">
