@@ -62,6 +62,5 @@ export async function getArticle(slug: string): Promise<Article> {
 export async function getArticles(): Promise<Article[]> {
   const slugs = await getSlugs()
   const posts = await Promise.all([...slugs.map((slug) => getArticle(slug))])
-  const available = posts.filter((post) => post.metadata.public)
-  return available.sort((x, y) => (x.metadata.date > y.metadata.date ? -1 : 1))
+  return posts.sort((x, y) => (x.metadata.date > y.metadata.date ? -1 : 1))
 }
