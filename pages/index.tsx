@@ -90,7 +90,7 @@ export default function Index({ articles }: IndexProps) {
       {activies && (
         <Container flexDirection="column" className="space-y-5">
           {activies.user.pullRequests.edges
-            .slice(-5)
+            .slice(-3)
             .reverse()
             .map((edge) => (
               <Box key={edge.node.url} className="pl-4 border-l-4 border-primary">
