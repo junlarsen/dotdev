@@ -101,6 +101,16 @@ resource "aws_route53_record" "supergrecko_dev_cname_vercel" {
   ]
 }
 
+resource "aws_route53_record" "preview_supergrecko_dev_cname_vercel" {
+  zone_id = data.aws_route53_zone.supergrecko_dev.zone_id
+  name = "preview.${data.aws_route53_zone.supergrecko_dev.name}"
+  type = "CNAME"
+  ttl = 300
+  records = [
+    "cname.vercel-dns.com"
+  ]
+}
+
 resource "aws_route53_record" "supergrecko_dev_mx_google" {
   zone_id = data.aws_route53_zone.supergrecko_dev.zone_id
   name = data.aws_route53_zone.supergrecko_dev.name

@@ -6,6 +6,7 @@ resource "aws_apigatewayv2_api" "dotdev-api" {
     allow_origins = [
       "https://supergrecko.com",
       "https://supergrecko.dev",
+      "https://preview.supergrecko.dev",
       "https://matsjla.no"
     ]
   }
