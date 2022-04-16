@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+import '../components/index.css';
+import '@fontsource/nunito';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
