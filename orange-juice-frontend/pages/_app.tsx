@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Fragment>
       <Head>

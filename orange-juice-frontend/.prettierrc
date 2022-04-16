@@ -4,6 +4,7 @@
   "singleQuote": true,
   "arrowParens": "always",
   "endOfLine": "lf",
+  "bracketSameLine": true,
   "tabWidth": 2,
   "useTabs": false,
   "printWidth": 120,
