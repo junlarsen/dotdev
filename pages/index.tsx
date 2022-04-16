@@ -1,36 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Box, Container } from '../components/flex'
 import { Heading, Link, Text } from '../components/typography'
 import { Article, getArticles } from '../lib/mdx'
 import { GetStaticPropsResult } from 'next'
-import { GitHubActivityStreamResponse } from '../types/github-activity-stream'
 import { Section } from '../components/section'
 import { SiteMetadata } from '../components/metadata'
 import { SplitLayout } from '../components/layouts/split'
 import { isPreviewMode } from '../components/lib'
-
-const GITHUB_ACTIVITY_ENDPOINT =
-  process.env.NODE_ENV === 'development'
-    ? 'https://cors-anywhere.herokuapp.com/https://api.supergrecko.dev/v1/github-activity'
-    : 'https://api.supergrecko.dev/v1/github-activity'
 
 export interface IndexProps {
   articles: Article[]
 }
 
 export default function Index({ articles }: IndexProps) {
-  const [loading, setLoading] = useState(true)
-  const [activities, setActivities] = useState<GitHubActivityStreamResponse>()
   const posts = isPreviewMode() ? articles : articles.filter((it) => it.metadata.public)
-
-  useEffect(() => {
-    fetch(GITHUB_ACTIVITY_ENDPOINT)
-      .then((res) => res.json() as Promise<GitHubActivityStreamResponse>)
-      .then((res) => {
-        setLoading(false)
-        setActivities(res)
-      })
-  }, [articles])
 
   return (
     <SplitLayout>
@@ -96,30 +79,6 @@ export default function Index({ articles }: IndexProps) {
           and because open-source is very valuable to me.
         </Text>
       </Section>
-      {loading &&
-      <Text color="stroke">Loading recent GitHub activity ...</Text>}
-      {activities && (
-        <Container flexDirection="column" className="space-y-5">
-          {activities.user.pullRequests.edges
-            .slice(-3)
-            .reverse()
-            .map((edge) => (
-              <Box key={edge.node.url}
-                   className="pl-4 border-l-4 border-primary">
-                <Text size="sm">
-                  Opened PR:{' '}
-                  <Link href={edge.node.url}>
-                    {edge.node.repository.nameWithOwner} #{edge.node.number}
-                  </Link>
-                </Text>
-                <Text size="lg" color="primary">
-                  {edge.node.title}
-                </Text>
-                <Text>{edge.node.body.split(' ').slice(0, 15).join(' ')}...</Text>
-              </Box>
-            ))}
-        </Container>
-      )}
     </SplitLayout>
   )
 }

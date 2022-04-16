@@ -1,1 +1,0 @@
-module.exports = require('./dist/lambda/github-activity-stream/src/app')
