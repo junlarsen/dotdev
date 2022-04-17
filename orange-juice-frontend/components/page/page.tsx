@@ -4,7 +4,6 @@ import { Tabs, TabsProps } from '../tabs/tabs';
 
 const TAB_TARGETS: TabsProps['targets'] = [
   { children: 'About', href: '/' },
-  { children: 'Projects', href: '/projects' },
   { children: 'Contact', href: '/contact' },
 ];
 
@@ -29,12 +28,11 @@ export const Page: FunctionComponent<PageProps> = (props) => {
           </div>
         </div>
         <div className="tw-w-full md:tw-w-2/3 tw-p-2">
-          <h1 className="tw-text-4xl dark:tw-text-primary">Hello there! 👋</h1>
+          <h1 className="tw-text-4xl">Hi, I'm Mats! 👋</h1>
           <div className="tw-mb-6">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien nisl, commodo dapibus consequat vel,
-              egestas vulputate metus. Aenean dapibus facilisis neque, in tincidunt quam egestas sed. Sed vitae nunc
-              quis dolor ultricies imperdiet ut vitae enim.
+              I'm a developer and student based in Trondheim, Norway with a passion for building things that people
+              love. I love to explore new things, work on open-source software and cook delicious food.
             </p>
           </div>
           <Tabs targets={TAB_TARGETS} />
@@ -45,7 +43,7 @@ export const Page: FunctionComponent<PageProps> = (props) => {
       <footer className="tw-hidden md:tw-flex tw-w-full tw-p-2 tw-mt-8 tw-row tw-justify-between">
         <p>&copy; {new Date().getFullYear()} Mats Larsen</p>
         <p>&mdash;</p>
-        <p className="tw-text-primary hover:tw-text-secondary dark:hover:tw-text-stroke">
+        <p className="tw-text-primary hover:tw-text-secondary">
           <a href="https://github.com/matsjla/dotdev" target="_blank" rel="noopener nofollow noreferrer">
             Source on GitHub
           </a>

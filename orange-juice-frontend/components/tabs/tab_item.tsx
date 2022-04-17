@@ -8,7 +8,7 @@ export const TabItem: FunctionComponent<TabsProps['targets'][number]> = (props) 
   const { children, href } = props;
   const router = useRouter();
   const isActive = router.pathname === href;
-  const classes = clsx('tw-w-1/3 tw-p-1 tw-text-center tw-border-b-2 tw-border-background', {
+  const classes = clsx('tw-w-1/2 tw-p-1 tw-text-center tw-border-b-2 tw-border-background', {
     'tw-border-secondary': isActive,
   });
 
