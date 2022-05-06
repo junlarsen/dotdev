@@ -1,1 +1,0 @@
-export type TimelineProps = Record<never, never>;
