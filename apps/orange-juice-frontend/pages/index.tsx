@@ -7,11 +7,11 @@ export default function App(): JSX.Element {
       <Section title="A little about me..">
         <p className="tw-my-1">
           I'm currently studying computer science at&nbsp;
-          <a className="tw-text-primary hover:tw-text-secondary" href="https://www.ntnu.edu/">
+          <a className="tw-text-primary hover:tw-text-secondary" href="pages/index">
             NTNU
           </a>
           , working part-time as a frontend developer at&nbsp;
-          <a className="tw-text-primary hover:tw-text-secondary" href="https://consigli.no/">
+          <a className="tw-text-primary hover:tw-text-secondary" href="pages/index">
             Consigli AS
           </a>
           . I'm also a core contributor to the&nbsp;

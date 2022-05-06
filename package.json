@@ -1,0 +1,20 @@
+{
+  "name": "dotdev",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "dev": "turbo run dev",
+    "fmt": "turbo run fmt",
+    "debug": "turbo run debug",
+    "cov": "turbo run cov"
+  },
+  "devDependencies": {
+    "turbo": "^1.2.5"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

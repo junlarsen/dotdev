@@ -17,7 +17,7 @@ export default function App(): JSX.Element {
         </p>
         <p className="tw-my-1">
           Have an opportunity to work together? Feel free to reach out to me on email or connect with me on&nbsp;
-          <a className="tw-text-primary hover:tw-text-secondary" href="https://www.linkedin.com/in/mats-jun-larsen/">
+          <a className="tw-text-primary hover:tw-text-secondary" href="pages/contact">
             LinkedIn
           </a>
           !

@@ -24,7 +24,7 @@ export const Page: FunctionComponent<PageProps> = (props) => {
       <div className="tw-flex tw-flex-col md:tw-flex-row tw-flex-nowrap tw-justify-between">
         <div className="tw-w-full md:tw-w-1/3 tw-p-2">
           <div className="tw-w-full tw-h-full">
-            <img className="tw-w-full tw-object-contain" src="/favicon.png" alt="logo" />
+            <img className="tw-w-full tw-object-contain" src="/apps/orange-juice-frontend/public/favicon.png" alt="logo" />
           </div>
         </div>
         <div className="tw-w-full md:tw-w-2/3 tw-p-2">
