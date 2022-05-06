@@ -13,7 +13,7 @@ export const Nav: FunctionComponent<NavProps> = (props) => {
   const windowSize = useWindowDimensions();
 
   return (
-    <nav className="tw-flex tw-flex-col md:tw-flex-row md:tw-justify-between tw-p-2">
+    <nav className="tw-flex tw-w-full tw-flex-col md:tw-flex-row md:tw-justify-between tw-p-2">
       <div className="tw-flex tw-justify-between">
         {icon}
         {windowSize.width < 768 && (

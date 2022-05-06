@@ -11,7 +11,9 @@ export const NavLink: FunctionComponent<NavLinkProps> = (props) => {
 
   return (
     <Link href={href}>
-      <a className="tw-align-middle tw-text-xl tw-p-1 tw-font-bold">{children}</a>
+      <a className="tw-align-middle tw-text-xl tw-p-1 tw-font-bold tw-decoration-3 tw-transition tw-ease-in-out hover:tw-underline">
+        {children}
+      </a>
     </Link>
   );
 };
