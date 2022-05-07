@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactNode } from 'react';
 import { Nav } from '../nav/nav';
 import { NavLink } from '../nav/nav_link';
+import { Paragraph } from '../typography/paragraph';
 
 export type PageProps = {
   children: ReactNode;
@@ -26,13 +27,17 @@ export const Page: FunctionComponent<PageProps> = (props) => {
 
       <div className="tw-p-8 tw-bg-secondary tw-text-background">
         <footer className="tw-flex tw-w-full tw-p-2 tw-row tw-justify-between tw-max-w-5xl tw-mx-auto">
-          <p>&copy; {new Date().getFullYear()} Mats Larsen</p>
-          <p>&mdash;</p>
-          <p className="tw-text-primary tw-decoration-3 tw-transition tw-ease-in-out hover:tw-underline">
-            <a href="https://github.com/matsjla/dotdev" target="_blank" rel="noopener nofollow noreferrer">
+          <Paragraph>&copy; {new Date().getFullYear()} Mats Larsen</Paragraph>
+          <Paragraph>&mdash;</Paragraph>
+          <Paragraph>
+            <a
+              href="https://github.com/matsjla/dotdev"
+              target="_blank"
+              rel="noopener nofollow noreferrer"
+              className="tw-text-primary tw-decoration-3 tw-transition tw-ease-in-out hover:tw-underline">
               Source on GitHub
             </a>
-          </p>
+          </Paragraph>
         </footer>
       </div>
     </div>
