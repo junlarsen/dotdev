@@ -25,7 +25,7 @@ export const Page: FunctionComponent<PageProps> = (props) => {
         <div className="tw-flex tw-flex-col md:tw-flex-row tw-w-full tw-flex-nowrap tw-justify-between">{children}</div>
       </main>
 
-      <div className="tw-p-8 tw-bg-secondary tw-text-background">
+      <div className="tw-p-8">
         <footer className="tw-flex tw-w-full tw-p-2 tw-row tw-justify-between tw-max-w-5xl tw-mx-auto">
           <Paragraph>&copy; {new Date().getFullYear()} Mats Larsen</Paragraph>
           <Paragraph>&mdash;</Paragraph>

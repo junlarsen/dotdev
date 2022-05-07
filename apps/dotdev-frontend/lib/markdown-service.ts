@@ -5,6 +5,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { BlogPost, blogPostSchema } from './blog-post';
 import matter from 'gray-matter';
+import remarkPrism from 'remark-prism';
+import remarkGfm from 'remark-gfm';
 
 export type BlogPostResult = {
   source: MDXRemoteSerializeResult;
@@ -22,7 +24,11 @@ export class MarkdownService implements AbstractMarkdownService {
     const source = await fs.readFile(path, 'utf8');
     const { minutes } = reading(source);
     const { data, content } = matter(source);
-    const mdx = await serialize(content);
+    const mdx = await serialize(content, {
+      mdxOptions: {
+        remarkPlugins: [remarkPrism, remarkGfm],
+      },
+    });
     const metadata = blogPostSchema.safeParse(data);
     if (metadata.success) {
       return {

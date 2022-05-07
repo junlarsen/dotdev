@@ -10,7 +10,7 @@ export const Heading: FunctionComponent<HeadingProps> = (props) => {
   const { children, size } = props;
   const Component = `h${size}` as const;
   // tw-text-lg tw-text-2xl tw-text-3xl tw-text-4xl tw-text-5xl
-  const classes = clsx('tw-font-bold', {
+  const classes = clsx('tw-font-bold tw-my-2', {
     'tw-text-4xl': size === 1,
     'tw-text-3xl': size === 2,
     'tw-text-2xl': size === 3,

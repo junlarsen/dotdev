@@ -14,6 +14,7 @@ module.exports = {
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif'],
+      jetbrains: ['JetBrains Mono', 'monospace'],
       icons: ['Material Icons', 'sans-serif'],
     },
   },

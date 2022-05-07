@@ -19,10 +19,20 @@ export default function App(props: BlogProps): JSX.Element {
       <div className="tw-p-2">
         <Heading size={1}>The Blog ✍</Heading>
         <Paragraph>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-          opposed to using &apos;Content here, content here&apos;, making it look like readable English.
+          This is my personal blog, a neat and tidy place to write about my thoughts, goals and experiences. You can
+          expect to find articles related to software development, food, travel and other hobbies and things I&apos;m
+          interested in &ndash; the possibilities are endless! 🚀
         </Paragraph>
+
+        {articles.length === 0 && (
+          <div className="tw-text-center">
+            <img className="tw-px-32" src="/undraw_web_development.png" alt="Under construction" />
+            <header className="tw-font-bold">
+              <Heading size={2}>No posts found</Heading>
+            </header>
+            <Paragraph>Looks like there are no posts here yet, maybe I should get to work!</Paragraph>
+          </div>
+        )}
 
         {articles.map(([slug, article]) => (
           <div key={article.meta.date} className="tw-mt-8">
@@ -49,14 +59,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const markdownService: AbstractMarkdownService = new MarkdownService();
   const blogService: AbstractBlogService = new BlogService(markdownService);
   const slugs = await blogService.getBlogPosts();
-  const articles = await Promise.all(
+  const all = await Promise.all(
     slugs.map(async (slug) => {
-      return [slug, await blogService.getBlogPost(slug)];
+      return [slug, await blogService.getBlogPost(slug)] as const;
     }),
   );
+  const visible = all.filter(([_, article]) => article.meta.public);
   return {
     props: {
-      articles,
+      articles: visible,
     },
   };
 };

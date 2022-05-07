@@ -8,6 +8,7 @@ export const blogPostSchema = z.object({
   tags: z.array(z.string()),
   imageUrl: z.string(),
   imageAlt: z.string(),
+  public: z.boolean(),
 });
 
 export type BlogPost = z.infer<typeof blogPostSchema>;

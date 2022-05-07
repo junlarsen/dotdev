@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import '../components/index.css';
+import '../components/gruvbox-dark.css';
 import '@fontsource/nunito';
 import '@fontsource/material-icons';
 

@@ -1,4 +1,6 @@
 import { Page } from '../components/layouts/page';
+import { Heading } from '../components/typography/heading';
+import { Paragraph } from '../components/typography/paragraph';
 
 export default function App(): JSX.Element {
   return (
@@ -9,16 +11,16 @@ export default function App(): JSX.Element {
         </div>
       </div>
       <div className="tw-w-full md:tw-w-2/3 tw-p-2">
-        <h1 className="tw-text-4xl">Hi, I&apos;m Mats! 👋</h1>
+        <Heading size={1}>Hi, I&apos;m Mats! 👋</Heading>
         <div className="tw-mb-6">
-          <p>
+          <Paragraph>
             I&apos;m a developer and student based in Trondheim, Norway with a passion for building things that people
             love. I love to explore new things, work on free open-source software, and cook food.
-          </p>
+          </Paragraph>
 
-          <p className="tw-my-1">
+          <Paragraph>
             I&apos;m currently studying computer science at&nbsp;
-            <a className="tw-text-primary hover:tw-text-secondary" href="http://ntnu.edu/">
+            <a className="tw-text-primary hover:tw-text-secondary" href="https://ntnu.edu/">
               NTNU
             </a>
             , working part-time as a frontend developer. I&apos;m also a core contributor to the&nbsp;
@@ -26,7 +28,7 @@ export default function App(): JSX.Element {
               Compiler Explorer
             </a>
             &nbsp;project.
-          </p>
+          </Paragraph>
         </div>
       </div>
     </Page>
