@@ -12,7 +12,8 @@
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.5.8",
     "@fontsource/material-icons": "^4.5.4",
-    "@fontsource/nunito": "^4.5.8",
+    "@fontsource/noto-sans": "^4.5.9",
+    "@fontsource/noto-sans-jp": "^4.5.9",
     "clsx": "^1.1.1",
     "gray-matter": "^4.0.3",
     "next": "12.1.5",

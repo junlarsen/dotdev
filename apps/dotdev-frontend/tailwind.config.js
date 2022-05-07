@@ -13,7 +13,7 @@ module.exports = {
       secondary: '#010E28',
     },
     fontFamily: {
-      nunito: ['Nunito', 'sans-serif'],
+      noto: ['Noto Sans JP', 'Noto Sans', 'sans-serif'],
       jetbrains: ['JetBrains Mono', 'monospace'],
       icons: ['Material Icons', 'sans-serif'],
     },

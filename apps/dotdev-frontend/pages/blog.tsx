@@ -26,7 +26,7 @@ export default function App(props: BlogProps): JSX.Element {
 
         {articles.length === 0 && (
           <div className="tw-text-center">
-            <img className="tw-px-32" src="/undraw_web_development.png" alt="Under construction" />
+            <img className="tw-px-8 md:tw-px-32" src="/undraw_web_development.png" alt="Under construction" />
             <header className="tw-font-bold">
               <Heading size={2}>No posts found</Heading>
             </header>

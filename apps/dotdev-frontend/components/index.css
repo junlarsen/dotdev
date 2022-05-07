@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .app-body {
-  min-height: calc(100vh - 104px - 52px);
+  min-height: calc(100vh - 88px - 52px);
 }

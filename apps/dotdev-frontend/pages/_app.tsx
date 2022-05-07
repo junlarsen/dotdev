@@ -3,8 +3,10 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import '../components/index.css';
 import '../components/gruvbox-dark.css';
-import '@fontsource/nunito';
+import '@fontsource/roboto';
 import '@fontsource/material-icons';
+import '@fontsource/noto-sans-jp';
+import '@fontsource/noto-sans';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
