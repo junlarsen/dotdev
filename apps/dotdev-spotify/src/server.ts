@@ -23,13 +23,18 @@ app.post('/', async (req: Request, res: Response): Promise<void> => {
 });
 
 // Spotify Authorization Code Flow endpoint
-app.get('/', (req: Request, res: Response): void => { res.redirect(spotifyAuthService.createAuthorizationUrl()); });
+app.get('/', (req: Request, res: Response): void => {
+  res.redirect(spotifyAuthService.createAuthorizationUrl());
+});
 
 // Spotify Authorization Code Flow callback endpoint
-app.get('/callback', async (req: Request<unknown, unknown, unknown, { code: string }>, res: Response): Promise<void> => {
-  const { accessToken, refreshToken } = await spotifyAuthService.getCredentials(req.query.code);
-  res.json({ accessToken, refreshToken });
-});
+app.get(
+  '/callback',
+  async (req: Request<unknown, unknown, unknown, { code: string }>, res: Response): Promise<void> => {
+    const { accessToken, refreshToken } = await spotifyAuthService.getCredentials(req.query.code);
+    res.json({ accessToken, refreshToken });
+  },
+);
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');
