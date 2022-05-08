@@ -6,16 +6,18 @@
   "scripts": {
     "fmt": "prettier --write .",
     "lint": "eslint .",
-    "build": "esbuild src/lambda.ts --format=cjs --bundle --outfile=dist/lambda.js",
+    "build": "esbuild src/lambda.ts --format=cjs --platform=node --target=node14 --bundle --outfile=dist/lambda.js --external:aws-sdk",
     "dev": "node --loader ts-node/esm --experimental-specifier-resolution=node src/server.ts"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.95",
-    "aws-sdk": "^2.1130.0"
+    "aws-sdk": "^2.1130.0",
+    "spotify-web-api-node": "^5.0.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "17.0.24",
+    "@types/spotify-web-api-node": "^5.0.7",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "esbuild": "^0.14.38",
