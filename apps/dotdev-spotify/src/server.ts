@@ -15,6 +15,7 @@ app.use(json());
 
 // Lambda mock endpoint
 app.post('/', async (req: Request, res: Response): Promise<void> => {
+  await spotifyService.initialize();
   const state = await spotifyService.getCurrentTrack();
   if (state === null) {
     res.status(404).json({});

@@ -26,12 +26,14 @@ export class SpotifyService implements AbstractSpotifyService {
       clientSecret: spotifyClientSecret,
       refreshToken: spotifyRefreshToken,
     });
-    this.spotifyApi.refreshAccessToken().then((response) => {
-      if (response.statusCode !== 200) {
-        throw new Error('Failed to refresh access token');
-      }
-      this.spotifyApi.setAccessToken(response.body.access_token);
-    });
+  }
+
+  public async initialize(): Promise<void> {
+    const { statusCode, body } = await this.spotifyApi.refreshAccessToken();
+    if (statusCode !== 200) {
+      throw new Error(`Failed to refresh access token: ${body}`);
+    }
+    this.spotifyApi.setAccessToken(body.access_token);
   }
 
   public async getCurrentTrack(): Promise<SpotifyTrack | null> {
