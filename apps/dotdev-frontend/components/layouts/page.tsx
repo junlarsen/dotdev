@@ -27,7 +27,7 @@ export const Page: FunctionComponent<PageProps> = (props) => {
 
       <div className="tw-pt-8">
         <footer className="tw-flex tw-w-full tw-p-2 tw-row tw-justify-between tw-max-w-5xl tw-mx-auto">
-          <Paragraph>&copy; {new Date().getFullYear()} Mats Larsen</Paragraph>
+          <Paragraph>&copy; {new Date().getFullYear()} Mats Jun Larsen</Paragraph>
           <Paragraph>&mdash;</Paragraph>
           <Paragraph>
             <a

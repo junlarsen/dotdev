@@ -9,12 +9,12 @@ export default function App(): JSX.Element {
   return (
     <Page>
       <Head>
-        <title>Home | </title>
+        <title>Home | Jun&apos;s Crusty Corner</title>
+        <meta name="description" content="This is the Crusty Corner, my personal space on the internet!" />
       </Head>
-
       <div className="tw-w-full md:tw-w-1/3 tw-p-2">
         <div className="tw-w-full tw-h-full">
-          <Image className="tw-rounded-full" src="/favicon.png" width={128} height={128} layout="responsive" />
+          <Image className="tw-rounded-full" src="/icon.jpg" width={128} height={128} layout="responsive" alt="Profile picture" />
         </div>
       </div>
       <div className="tw-w-full md:tw-w-2/3 tw-p-2">
@@ -27,8 +27,8 @@ export default function App(): JSX.Element {
 
           <Paragraph>
             I&apos;m currently studying computer science at&nbsp;
-            <Link href="https://www.ntnu.no/">NTNU</Link>&nbsp;in Trondheim, Norway , remotely working part-time as a
-            frontend developer. I&apos;m also a core contributor to the&nbsp;
+            <Link href="https://www.ntnu.no/">NTNU</Link>&nbsp;in Trondheim, Norway, working part-time as a
+            frontend developer remotely. I&apos;m also a core contributor to the&nbsp;
             <Link href="https://godbolt.org">Compiler Explorer</Link>
             &nbsp;project.
           </Paragraph>

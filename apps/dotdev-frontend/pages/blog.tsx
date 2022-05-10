@@ -7,6 +7,7 @@ import { AbstractBlogService, BlogService } from '../lib/blog-service';
 import { Link } from '../components/typography/link';
 import { TagList } from '../components/tag/tag_list';
 import { Tag } from '../components/tag/tag';
+import Head from 'next/head';
 
 export type BlogProps = {
   articles: [string, BlogPostResult][];
@@ -16,6 +17,10 @@ export default function App(props: BlogProps): JSX.Element {
   const { articles } = props;
   return (
     <Page>
+      <Head>
+        <title>Blog | Jun&apos;s Crusty Corner</title>
+        <meta name="description" content="This is my blog, a neat and tidy where I keep my thoughts and experiences." />
+      </Head>
       <div className="tw-p-2">
         <Heading size={1}>The Blog ✍</Heading>
         <Paragraph>
