@@ -3,6 +3,7 @@ import { Page } from '../components/layouts/page';
 import { Heading } from '../components/typography/heading';
 import { Paragraph } from '../components/typography/paragraph';
 import { Link } from '../components/typography/link';
+import Image from 'next/image';
 
 export default function App(): JSX.Element {
   return (
@@ -13,7 +14,7 @@ export default function App(): JSX.Element {
 
       <div className="tw-w-full md:tw-w-1/3 tw-p-2">
         <div className="tw-w-full tw-h-full">
-          <img className="tw-w-full tw-object-contain" src="/favicon.png" alt="logo" />
+          <Image className="tw-rounded-full" src="/favicon.png" width={128} height={128} layout="responsive" />
         </div>
       </div>
       <div className="tw-w-full md:tw-w-2/3 tw-p-2">
