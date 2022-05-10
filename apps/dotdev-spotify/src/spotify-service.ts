@@ -37,7 +37,9 @@ export class SpotifyService implements AbstractSpotifyService {
   }
 
   public async getCurrentTrack(): Promise<SpotifyTrack | null> {
-    const state = await this.spotifyApi.getMyCurrentPlaybackState();
+    const state = await this.spotifyApi.getMyCurrentPlaybackState({
+      market: 'JP',
+    });
     if (state.statusCode !== 200 || !state.body.is_playing || state.body?.item?.type !== 'track') {
       return null;
     }

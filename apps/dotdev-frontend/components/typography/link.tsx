@@ -10,7 +10,7 @@ export const Link: FunctionComponent<LinkProps> = (props) => {
   const { children, href } = props;
   return (
     <NextLink href={href}>
-      <a>{children}</a>
+      <a className="tw-text-primary hover:tw-underline tw-decoration-2">{children}</a>
     </NextLink>
   );
 };

@@ -36,12 +36,12 @@ export default function App(props: BlogProps): JSX.Element {
 
         {articles.map(([slug, article]) => (
           <div key={article.meta.date} className="tw-mt-8">
-            <div className="tw-flex tw-flex-row tw-justify-between tw-items-center">
-              <Link href={`/blog/${slug}`}>
-                <Heading size={2}>{article.meta.title}</Heading>
-              </Link>
-              <span className="tw-text-secondary">{Math.ceil(article.time)} min read</span>
-            </div>
+            <Link href={`/blog/${slug}`}>
+              <Heading size={2}>
+                {article.meta.title}
+                <span className="tw-text-black tw-text-sm">&nbsp;&mdash; {Math.ceil(article.time)} min read</span>
+              </Heading>
+            </Link>
             <Paragraph>{article.meta.introduction}</Paragraph>
             <TagList>
               {article.meta.tags.map((tag) => (

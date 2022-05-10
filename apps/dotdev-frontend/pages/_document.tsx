@@ -9,11 +9,11 @@ export default class AppDocument extends Document {
 
   public render(): JSX.Element {
     return (
-      <Html lang="en" dir="ltr" itemScope itemType="https://schema.org/Article">
+      <Html lang="en" dir="ltr">
         <Head>
           <noscript>
-            This page uses JavaScript to function properly. If you haven&apos;t already, please consider enabling it to
-            view this webpage.
+            This page uses JavaScript to function properly. If you have not already, please consider enabling it to view
+            this webpage.
           </noscript>
         </Head>
         <body>

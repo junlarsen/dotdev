@@ -8,9 +8,9 @@ module.exports = {
       warning: '#FF9800',
       success: '#4CAF50',
       background: '#FFFFFE',
+      black: '#000000',
       stroke: '#F2F4F6',
-      primary: '#039BE5',
-      secondary: '#010E28',
+      primary: '#DA1B5E',
     },
     fontFamily: {
       noto: ['Noto Sans JP', 'Noto Sans', 'sans-serif'],

@@ -1,10 +1,16 @@
+import Head from 'next/head';
 import { Page } from '../components/layouts/page';
 import { Heading } from '../components/typography/heading';
 import { Paragraph } from '../components/typography/paragraph';
+import { Link } from '../components/typography/link';
 
 export default function App(): JSX.Element {
   return (
     <Page>
+      <Head>
+        <title>Home | </title>
+      </Head>
+
       <div className="tw-w-full md:tw-w-1/3 tw-p-2">
         <div className="tw-w-full tw-h-full">
           <img className="tw-w-full tw-object-contain" src="/favicon.png" alt="logo" />
@@ -20,13 +26,9 @@ export default function App(): JSX.Element {
 
           <Paragraph>
             I&apos;m currently studying computer science at&nbsp;
-            <a className="tw-text-primary hover:tw-text-secondary" href="https://ntnu.edu/">
-              NTNU
-            </a>
-            , working part-time as a frontend developer. I&apos;m also a core contributor to the&nbsp;
-            <a className="tw-text-primary hover:tw-text-secondary" href="https://godbolt.org">
-              Compiler Explorer
-            </a>
+            <Link href="https://www.ntnu.no/">NTNU</Link>&nbsp;in Trondheim, Norway , remotely working part-time as a
+            frontend developer. I&apos;m also a core contributor to the&nbsp;
+            <Link href="https://godbolt.org">Compiler Explorer</Link>
             &nbsp;project.
           </Paragraph>
         </div>
