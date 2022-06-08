@@ -1,5 +1,5 @@
 {
-  "name": "dotdev-frontend",
+  "name": "@dotdev/frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
