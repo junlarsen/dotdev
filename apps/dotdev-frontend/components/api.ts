@@ -18,7 +18,7 @@ export type SpotifyApiGatewayResponse =
       body: SpotifyTrack;
     };
 
-export const fetcher = async (url: string): object => {
+export const fetcher = async (url: string): Promise<any> => {
   const response = await fetch(url, {
     headers: {
       Accept: 'application/json',
