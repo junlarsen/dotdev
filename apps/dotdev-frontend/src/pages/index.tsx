@@ -21,6 +21,7 @@ export default function App(): JSX.Element {
             height={128}
             layout="responsive"
             alt="Profile picture"
+            priority
           />
         </div>
       </div>
