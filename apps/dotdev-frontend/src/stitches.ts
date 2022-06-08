@@ -16,6 +16,14 @@ export const { styled, css, globalCss, getCssText } = createStitches({
       stroke: '#F2F4F6',
       primary: '#DA1B5E',
     },
+    fontSizes: {
+      headline: '2.25rem',
+      heading1: '1.875rem',
+      heading2: '1.5rem',
+      heading3: '1.25rem',
+      heading4: '1.125rem',
+      heading5: '1rem',
+    }
   },
 });
 

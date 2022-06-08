@@ -4,6 +4,7 @@ import { Heading } from '../components/typography/heading';
 import { Paragraph } from '../components/typography/paragraph';
 import { Link } from '../components/typography/link';
 import Image from 'next/image';
+import { Headline } from '../components/typography/headline';
 
 export default function App(): JSX.Element {
   return (
@@ -26,7 +27,7 @@ export default function App(): JSX.Element {
         </div>
       </div>
       <div className="tw-w-full md:tw-w-2/3 tw-p-2">
-        <Heading size={1}>Hi, I&apos;m Mats! 👋</Heading>
+        <Headline>Hi, I&apos;m Mats! 👋</Headline>
         <div className="tw-mb-6">
           <Paragraph>
             I&apos;m a developer and student based in Trondheim, Norway with a passion for building things that people

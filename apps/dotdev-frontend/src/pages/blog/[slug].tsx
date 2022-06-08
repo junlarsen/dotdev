@@ -6,13 +6,14 @@ import { MDXRemote } from 'next-mdx-remote';
 import { Link } from '../../components/typography/link';
 import { Paragraph } from '../../components/typography/paragraph';
 import { Heading } from '../../components/typography/heading';
+import { Headline } from '../../components/typography/headline';
 
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const MDX_CUSTOM_COMPONENTS = {
   p: (props: any) => <Paragraph {...props} />,
   a: (props: any) => <Link {...props} />,
-  h1: (props: any) => <Heading size={1} {...props} />,
+  h1: (props: any) => <Headline {...props} />,
   h2: (props: any) => <Heading size={2} {...props} />,
   h3: (props: any) => <Heading size={3} {...props} />,
   h4: (props: any) => <Heading size={4} {...props} />,

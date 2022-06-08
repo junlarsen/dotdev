@@ -8,6 +8,7 @@ import { Link } from '../components/typography/link';
 import { TagList } from '../components/tag/tag_list';
 import { Tag } from '../components/tag/tag';
 import Head from 'next/head';
+import { Headline } from '../components/typography/headline';
 
 export type BlogProps = {
   articles: [string, BlogPostResult][];
@@ -22,7 +23,7 @@ export default function App(props: BlogProps): JSX.Element {
         <meta name="description" content="This is my blog, a neat and tidy where I keep my thoughts and experiences." />
       </Head>
       <div className="tw-p-2">
-        <Heading size={1}>The Blog ✍</Heading>
+        <Headline>The Blog ✍</Headline>
         <Paragraph>
           This is my personal blog, a neat and tidy place to write about my thoughts, goals and experiences. You can
           expect to find articles related to software development, food, travel and other hobbies and things I&apos;m
