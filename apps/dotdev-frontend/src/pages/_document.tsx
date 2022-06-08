@@ -1,5 +1,6 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
+import { getCssText, applyCssReset } from '../stitches';
 
 export default class AppDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -8,6 +9,8 @@ export default class AppDocument extends Document {
   }
 
   public render(): JSX.Element {
+    applyCssReset();
+
     return (
       <Html lang="en" dir="ltr">
         <Head>
@@ -29,6 +32,8 @@ export default class AppDocument extends Document {
           <meta name="twitter:dnt" content="on" />
           <meta name="pinterest" content="nopin" />
           <meta name="format-detection" content="telephone=no" />
+
+          <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
 
           <noscript>
             This page uses JavaScript to function properly. If you have not already, please consider enabling it to view
