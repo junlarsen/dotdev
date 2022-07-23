@@ -8,7 +8,7 @@ export const ContentBoundaryView = styled('div', {
   },
   variants: {
     color: {
-      white: { backgroundColor: '$red5' },
+      white: { backgroundColor: '$pinkA1' },
       brand: { backgroundColor: '$orangeA9' },
     },
   },
