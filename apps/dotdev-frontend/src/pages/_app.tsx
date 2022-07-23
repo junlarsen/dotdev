@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-import '../components/index.css';
-import '../components/gruvbox-dark.css';
-import '@fontsource/jetbrains-mono';
-import '@fontsource/material-icons';
+import { global, reset } from '../stitches.config';
 import '@fontsource/noto-sans-jp';
 import '@fontsource/noto-sans';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  reset();
+  global();
+
   return (
     <Fragment>
       <Head>
