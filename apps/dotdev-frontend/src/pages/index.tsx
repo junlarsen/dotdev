@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { Page } from '../components/layouts/page';
-import { Heading } from '../components/typography/heading';
-import { Paragraph } from '../components/typography/paragraph';
-import { Link } from '../components/typography/link';
+import { Page } from '../templates/page';
+import { Paragraph } from '../atoms/typography/paragraph';
+import { Link } from '../atoms/typography/link';
 import Image from 'next/image';
-import { Headline } from '../components/typography/headline';
+import { Headline } from '../atoms/typography/headline';
+import { css, styled } from '../stitches';
 
 export default function App(): JSX.Element {
   return (
@@ -13,10 +13,9 @@ export default function App(): JSX.Element {
         <title>Home | Jun&apos;s Crusty Corner</title>
         <meta name="description" content="This is the Crusty Corner, my personal space on the internet!" />
       </Head>
-      <div className="tw-w-full md:tw-w-1/3 tw-p-2">
-        <div className="tw-w-full tw-h-full">
-          <Image
-            className="tw-rounded-full"
+      <div className={leftSectionStyles()}>
+        <div className={profilePictureWrapperStyles()}>
+          <ProfilePicture
             src="/icon.jpg"
             width={128}
             height={128}
@@ -26,7 +25,7 @@ export default function App(): JSX.Element {
           />
         </div>
       </div>
-      <div className="tw-w-full md:tw-w-2/3 tw-p-2">
+      <div className={rightSectionStyles()}>
         <Headline>Hi, I&apos;m Mats! 👋</Headline>
         <div className="tw-mb-6">
           <Paragraph>
@@ -48,3 +47,28 @@ export default function App(): JSX.Element {
     </Page>
   );
 }
+
+const leftSectionStyles = css({
+  width: '100%',
+  padding: '0.5rem',
+  '@md': {
+    width: '33.33%',
+  },
+});
+
+const rightSectionStyles = css({
+  width: '100%',
+  padding: '0.5rem',
+  '@md': {
+    width: '66.66%',
+  }
+})
+
+const profilePictureWrapperStyles = css({
+  width: '100%',
+  height: '100%',
+});
+
+const ProfilePicture = styled(Image, {
+  borderRadius: '999px',
+})

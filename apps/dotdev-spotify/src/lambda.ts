@@ -5,12 +5,14 @@ import { SpotifyService, SpotifyTrack } from './spotify-service';
 const configService = new ConfigService();
 const spotifyService = new SpotifyService(configService);
 
-type GatewayResponse = {
-  isActive: true;
-  body: SpotifyTrack;
-} | {
-  isActive: false;
-}
+type GatewayResponse =
+  | {
+      isActive: true;
+      body: SpotifyTrack;
+    }
+  | {
+      isActive: false;
+    };
 
 const response = (statusCode: number, body: GatewayResponse): APIGatewayProxyResultV2 => {
   return {
@@ -19,7 +21,7 @@ const response = (statusCode: number, body: GatewayResponse): APIGatewayProxyRes
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache',
-    }
+    },
   };
 };
 

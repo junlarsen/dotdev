@@ -14,31 +14,31 @@ export const Heading: FunctionComponent<HeadingProps> = (props) => {
     <HeadingComponent as={as} size={size}>
       {children}
     </HeadingComponent>
-  )
+  );
 };
 
 const HeadingComponent = styled('h2', {
-  fontWeight: 'bold',
+  fontWeight: '700',
   fontFamily: '$noto',
   color: '$black',
   margin: '0.5rem 0',
   variants: {
     size: {
       5: {
-        fontSize: '$heading5'
+        fontSize: '$heading5',
       },
       4: {
-        fontSize: '$heading4'
+        fontSize: '$heading4',
       },
       3: {
-        fontSize: '$heading3'
+        fontSize: '$heading3',
       },
       2: {
-        fontSize: '$heading2'
+        fontSize: '$heading2',
       },
       1: {
-        fontSize: '$heading1'
-      }
-    }
-  }
-})
+        fontSize: '$heading1',
+      },
+    },
+  },
+});

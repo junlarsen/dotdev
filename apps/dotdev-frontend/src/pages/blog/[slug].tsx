@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { AbstractBlogService, BlogService } from '../../lib/blog-service';
 import { AbstractMarkdownService, BlogPostResult, MarkdownService } from '../../lib/markdown-service';
-import { Page } from '../../components/layouts/page';
+import { Page } from '../../templates/page';
 import { MDXRemote } from 'next-mdx-remote';
-import { Link } from '../../components/typography/link';
-import { Paragraph } from '../../components/typography/paragraph';
-import { Heading } from '../../components/typography/heading';
-import { Headline } from '../../components/typography/headline';
+import { Link } from '../../atoms/typography/link';
+import { Paragraph } from '../../atoms/typography/paragraph';
+import { Heading } from '../../atoms/typography/heading';
+import { Headline } from '../../atoms/typography/headline';
 
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */

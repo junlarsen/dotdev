@@ -22,8 +22,15 @@ export const { styled, css, globalCss, getCssText } = createStitches({
       heading2: '1.5rem',
       heading3: '1.25rem',
       heading4: '1.125rem',
-      heading5: '1rem',
-    }
+      heading5: '$body',
+      icons: '$heading3',
+      body: '1rem',
+    },
+  },
+  media: {
+    sm: '(max-width: 639px)',
+    md: '(min-width: 640px)',
+    lg: '(min-width: 1024px)',
   },
 });
 
@@ -37,6 +44,10 @@ export const applyCssReset = globalCss({
       font: 'inherit',
       verticalAlign: 'baseline',
     },
+  a: {
+    cursor: 'pointer',
+    textDecoration: 'none',
+  },
   'article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section': {
     display: 'block',
   },
